@@ -1,0 +1,1420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41202048204E5DD8003D044C /* UIImage+QRcode.m in Sources */ = {isa = PBXBuildFile; fileRef = 41202047204E5DD8003D044C /* UIImage+QRcode.m */; };
+		415A07D72047DD96001448F6 /* InviteCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 415A07D62047DD96001448F6 /* InviteCodeController.m */; };
+		4163B407204CDC780067A2A9 /* NSString+VerifyPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163B403204CDC780067A2A9 /* NSString+VerifyPhoneNumber.m */; };
+		4163B408204CDC780067A2A9 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163B406204CDC780067A2A9 /* NSString+Extend.m */; };
+		4163B40B204CF13E0067A2A9 /* DeviceDataLibrery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4163B40A204CF13E0067A2A9 /* DeviceDataLibrery.m */; };
+		4164A1A120412B4700186B00 /* UIScrollView+KafkaConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A14D20412B4600186B00 /* UIScrollView+KafkaConfiguration.m */; };
+		4164A1A220412B4700186B00 /* KafkaHeadRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15020412B4600186B00 /* KafkaHeadRefreshControl.m */; };
+		4164A1A320412B4700186B00 /* KafkaRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15120412B4600186B00 /* KafkaRefreshControl.m */; };
+		4164A1A420412B4700186B00 /* KafkaFootRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15320412B4600186B00 /* KafkaFootRefreshControl.m */; };
+		4164A1A520412B4700186B00 /* UIScrollView+Kafka.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15420412B4600186B00 /* UIScrollView+Kafka.m */; };
+		4164A1A620412B4700186B00 /* CALayer+KafkaLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15E20412B4600186B00 /* CALayer+KafkaLayout.m */; };
+		4164A1A720412B4700186B00 /* UIView+KafkaLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A15F20412B4600186B00 /* UIView+KafkaLayout.m */; };
+		4164A1A820412B4700186B00 /* NSObject+KafkaAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16020412B4600186B00 /* NSObject+KafkaAnimation.m */; };
+		4164A1A920412B4700186B00 /* UIScrollView+KafkaLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16120412B4600186B00 /* UIScrollView+KafkaLayout.m */; };
+		4164A1AA20412B4700186B00 /* KafkaNativeFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16820412B4600186B00 /* KafkaNativeFooter.m */; };
+		4164A1AB20412B4700186B00 /* KafkaRingIndicatorFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16920412B4600186B00 /* KafkaRingIndicatorFooter.m */; };
+		4164A1AC20412B4700186B00 /* KafkaReplicatorFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16A20412B4600186B00 /* KafkaReplicatorFooter.m */; };
+		4164A1AD20412B4700186B00 /* KafkaArrowFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A16B20412B4600186B00 /* KafkaArrowFooter.m */; };
+		4164A1AE20412B4700186B00 /* KafkaNativeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17120412B4600186B00 /* KafkaNativeHeader.m */; };
+		4164A1AF20412B4700186B00 /* KafkaRingIndicatorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17220412B4600186B00 /* KafkaRingIndicatorHeader.m */; };
+		4164A1B020412B4700186B00 /* KafkaArrowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17320412B4600186B00 /* KafkaArrowHeader.m */; };
+		4164A1B120412B4700186B00 /* KafkaReplicatorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17420412B4600186B00 /* KafkaReplicatorHeader.m */; };
+		4164A1B220412B4700186B00 /* KafkaReplicatorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17620412B4600186B00 /* KafkaReplicatorLayer.m */; };
+		4164A1B320412B4700186B00 /* KafkaArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17720412B4600186B00 /* KafkaArcLayer.m */; };
+		4164A1B420412B4700186B00 /* KafkaRefreshDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A17C20412B4600186B00 /* KafkaRefreshDefaults.m */; };
+		4164A1B520412B4700186B00 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4164A18220412B4600186B00 /* Image.bundle */; };
+		4164A1B620412B4700186B00 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A18320412B4600186B00 /* BaseNavigationController.m */; };
+		4164A1B720412B4700186B00 /* WRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A18520412B4600186B00 /* WRNavigationBar.m */; };
+		4164A1B820412B4700186B00 /* WRCustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A18820412B4600186B00 /* WRCustomNavigationBar.m */; };
+		4164A1B920412B4700186B00 /* WRImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A18A20412B4600186B00 /* WRImageHelper.m */; };
+		4164A1BA20412B4700186B00 /* UITabBar+CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A18F20412B4600186B00 /* UITabBar+CustomBadge.m */; };
+		4164A1BB20412B4700186B00 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A19020412B4600186B00 /* MainTabBarController.m */; };
+		4164A1BC20412B4700186B00 /* MarsTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A19120412B4600186B00 /* MarsTabBar.m */; };
+		4164A1BE20412B4700186B00 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A19A20412B4700186B00 /* Helper.m */; };
+		4164A1C820412C0D00186B00 /* PlaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1C720412C0D00186B00 /* PlaneController.m */; };
+		4164A1CB20412C1A00186B00 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1CA20412C1A00186B00 /* MineController.m */; };
+		4164A1D520412E2000186B00 /* HUDTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1CF20412E1F00186B00 /* HUDTools.m */; };
+		4164A1D620412E2000186B00 /* LogCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1D320412E2000186B00 /* LogCategory.m */; };
+		4164A1D720412E2000186B00 /* NSLog+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1D420412E2000186B00 /* NSLog+Extension.m */; };
+		4164A1DA20412E4100186B00 /* UIButton+Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1D920412E4100186B00 /* UIButton+Countdown.m */; };
+		4164A1DD20412F9900186B00 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1DC20412F9900186B00 /* BaseViewController.m */; };
+		4164A1E2204146D000186B00 /* MHHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1E0204146D000186B00 /* MHHttpTool.m */; };
+		4164A1E52041470400186B00 /* AutoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1E42041470400186B00 /* AutoButton.m */; };
+		4164A1E92041496800186B00 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4164A1E82041496800186B00 /* LoginController.m */; };
+		4189D23E20411414000F533D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D23D20411414000F533D /* AppDelegate.m */; };
+		4189D24120411414000F533D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D24020411414000F533D /* ViewController.m */; };
+		4189D24420411414000F533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4189D24220411414000F533D /* Main.storyboard */; };
+		4189D24620411414000F533D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4189D24520411414000F533D /* Assets.xcassets */; };
+		4189D24920411414000F533D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4189D24720411414000F533D /* LaunchScreen.storyboard */; };
+		4189D24C20411414000F533D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D24B20411414000F533D /* main.m */; };
+		4189D25620411414000F533D /* PlanetAirCnCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D25520411414000F533D /* PlanetAirCnCTests.m */; };
+		4189D26120411414000F533D /* PlanetAirCnCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D26020411414000F533D /* PlanetAirCnCUITests.m */; };
+		41B851B92043984F00052DF7 /* UIButton+TouchOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851B82043984F00052DF7 /* UIButton+TouchOne.m */; };
+		41B851C42043ACC700052DF7 /* CustomLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851C32043ACC700052DF7 /* CustomLoader.m */; };
+		41B851CA2044F2AE00052DF7 /* PlaneRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851C92044F2AE00052DF7 /* PlaneRankCell.m */; };
+		41B851CD204546FC00052DF7 /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851CC204546FC00052DF7 /* SettingController.m */; };
+		41B851D020454A6500052DF7 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851CF20454A6500052DF7 /* SettingCell.m */; };
+		41B851D420463EB000052DF7 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851D320463EB000052DF7 /* AutoScrollLabel.m */; };
+		41B851DA2046418400052DF7 /* MBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851D72046418400052DF7 /* MBManager.m */; };
+		41B851DB2046418400052DF7 /* UIView+MHExtra.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851D82046418400052DF7 /* UIView+MHExtra.m */; };
+		41B851E1204648A700052DF7 /* TXScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851DF204648A700052DF7 /* TXScrollLabelView.m */; };
+		41B851E2204648A700052DF7 /* UIView+TXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851E0204648A700052DF7 /* UIView+TXFrame.m */; };
+		41B851E52046725B00052DF7 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851E42046725B00052DF7 /* TaskViewController.m */; };
+		41B851E82046768300052DF7 /* TaskOneViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851E72046768300052DF7 /* TaskOneViewCell.m */; };
+		41B851EB204679E800052DF7 /* TaskOneHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851EA204679E800052DF7 /* TaskOneHeaderView.m */; };
+		41B851EE20467A6E00052DF7 /* TaaskTwoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851ED20467A6E00052DF7 /* TaaskTwoHeaderView.m */; };
+		41B851F120467AF200052DF7 /* TaskFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851F020467AF200052DF7 /* TaskFooterView.m */; };
+		41B851F42046848900052DF7 /* TaskTwoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851F32046848900052DF7 /* TaskTwoViewCell.m */; };
+		41B851F72046954E00052DF7 /* DiamondsRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851F62046954E00052DF7 /* DiamondsRecordController.m */; };
+		41B851FA20469D7E00052DF7 /* DiamondsRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851F920469D7E00052DF7 /* DiamondsRecordCell.m */; };
+		41B851FD204788D700052DF7 /* RecordForceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851FC204788D700052DF7 /* RecordForceController.m */; };
+		41B852002047892900052DF7 /* RecordForceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B851FF2047892900052DF7 /* RecordForceCell.m */; };
+		41B85203204790EF00052DF7 /* WkWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B85202204790EF00052DF7 /* WkWebViewController.m */; };
+		41B8520620479B6900052DF7 /* EnergyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B8520520479B6900052DF7 /* EnergyView.m */; };
+		41E14233204916B60023FEC3 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E14232204916B60023FEC3 /* UIColor+Hex.m */; };
+		7320ADFE620B826DE8B08047 /* libPods-PlanetAirCnCUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB65C0B74154653C9FEF7DDF /* libPods-PlanetAirCnCUITests.a */; };
+		A19C9BF0369A7FA73741440B /* libPods-PlanetAirCnCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43AD4D6B8DB0382F5204E6B0 /* libPods-PlanetAirCnCTests.a */; };
+		E1248D98120B16C8251024B8 /* libPods-PlanetAirCnC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8598F98B64CD7C26C0B7F0D0 /* libPods-PlanetAirCnC.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4189D25220411414000F533D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4189D23120411413000F533D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4189D23820411413000F533D;
+			remoteInfo = PlanetAirCnC;
+		};
+		4189D25D20411414000F533D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4189D23120411413000F533D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4189D23820411413000F533D;
+			remoteInfo = PlanetAirCnC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		22FB085153DE90CBC9EC777C /* Pods-PlanetAirCnCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnCTests/Pods-PlanetAirCnCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		41202046204E5DD8003D044C /* UIImage+QRcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRcode.h"; sourceTree = "<group>"; };
+		41202047204E5DD8003D044C /* UIImage+QRcode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRcode.m"; sourceTree = "<group>"; };
+		415A07D52047DD96001448F6 /* InviteCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteCodeController.h; sourceTree = "<group>"; };
+		415A07D62047DD96001448F6 /* InviteCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteCodeController.m; sourceTree = "<group>"; };
+		4163B403204CDC780067A2A9 /* NSString+VerifyPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+VerifyPhoneNumber.m"; sourceTree = "<group>"; };
+		4163B404204CDC780067A2A9 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		4163B405204CDC780067A2A9 /* NSString+VerifyPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+VerifyPhoneNumber.h"; sourceTree = "<group>"; };
+		4163B406204CDC780067A2A9 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		4163B409204CF13E0067A2A9 /* DeviceDataLibrery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDataLibrery.h; sourceTree = "<group>"; };
+		4163B40A204CF13E0067A2A9 /* DeviceDataLibrery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDataLibrery.m; sourceTree = "<group>"; };
+		4164A14D20412B4600186B00 /* UIScrollView+KafkaConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KafkaConfiguration.m"; sourceTree = "<group>"; };
+		4164A14E20412B4600186B00 /* UIScrollView+KafkaConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KafkaConfiguration.h"; sourceTree = "<group>"; };
+		4164A15020412B4600186B00 /* KafkaHeadRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaHeadRefreshControl.m; sourceTree = "<group>"; };
+		4164A15120412B4600186B00 /* KafkaRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaRefreshControl.m; sourceTree = "<group>"; };
+		4164A15220412B4600186B00 /* KafkaRefreshProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefreshProtocol.h; sourceTree = "<group>"; };
+		4164A15320412B4600186B00 /* KafkaFootRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaFootRefreshControl.m; sourceTree = "<group>"; };
+		4164A15420412B4600186B00 /* UIScrollView+Kafka.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Kafka.m"; sourceTree = "<group>"; };
+		4164A15520412B4600186B00 /* KafkaHeadRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaHeadRefreshControl.h; sourceTree = "<group>"; };
+		4164A15620412B4600186B00 /* KafkaFootRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaFootRefreshControl.h; sourceTree = "<group>"; };
+		4164A15720412B4600186B00 /* KafkaRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefreshControl.h; sourceTree = "<group>"; };
+		4164A15820412B4600186B00 /* UIScrollView+Kafka.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Kafka.h"; sourceTree = "<group>"; };
+		4164A15A20412B4600186B00 /* NSObject+KafkaAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KafkaAnimation.h"; sourceTree = "<group>"; };
+		4164A15B20412B4600186B00 /* CALayer+KafkaLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+KafkaLayout.h"; sourceTree = "<group>"; };
+		4164A15C20412B4600186B00 /* UIView+KafkaLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KafkaLayout.h"; sourceTree = "<group>"; };
+		4164A15D20412B4600186B00 /* UIScrollView+KafkaLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+KafkaLayout.h"; sourceTree = "<group>"; };
+		4164A15E20412B4600186B00 /* CALayer+KafkaLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+KafkaLayout.m"; sourceTree = "<group>"; };
+		4164A15F20412B4600186B00 /* UIView+KafkaLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KafkaLayout.m"; sourceTree = "<group>"; };
+		4164A16020412B4600186B00 /* NSObject+KafkaAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KafkaAnimation.m"; sourceTree = "<group>"; };
+		4164A16120412B4600186B00 /* UIScrollView+KafkaLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+KafkaLayout.m"; sourceTree = "<group>"; };
+		4164A16420412B4600186B00 /* KafkaNativeFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaNativeFooter.h; sourceTree = "<group>"; };
+		4164A16520412B4600186B00 /* KafkaRingIndicatorFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRingIndicatorFooter.h; sourceTree = "<group>"; };
+		4164A16620412B4600186B00 /* KafkaArrowFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaArrowFooter.h; sourceTree = "<group>"; };
+		4164A16720412B4600186B00 /* KafkaReplicatorFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaReplicatorFooter.h; sourceTree = "<group>"; };
+		4164A16820412B4600186B00 /* KafkaNativeFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaNativeFooter.m; sourceTree = "<group>"; };
+		4164A16920412B4600186B00 /* KafkaRingIndicatorFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaRingIndicatorFooter.m; sourceTree = "<group>"; };
+		4164A16A20412B4600186B00 /* KafkaReplicatorFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaReplicatorFooter.m; sourceTree = "<group>"; };
+		4164A16B20412B4600186B00 /* KafkaArrowFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaArrowFooter.m; sourceTree = "<group>"; };
+		4164A16D20412B4600186B00 /* KafkaNativeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaNativeHeader.h; sourceTree = "<group>"; };
+		4164A16E20412B4600186B00 /* KafkaRingIndicatorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRingIndicatorHeader.h; sourceTree = "<group>"; };
+		4164A16F20412B4600186B00 /* KafkaReplicatorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaReplicatorHeader.h; sourceTree = "<group>"; };
+		4164A17020412B4600186B00 /* KafkaArrowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaArrowHeader.h; sourceTree = "<group>"; };
+		4164A17120412B4600186B00 /* KafkaNativeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaNativeHeader.m; sourceTree = "<group>"; };
+		4164A17220412B4600186B00 /* KafkaRingIndicatorHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaRingIndicatorHeader.m; sourceTree = "<group>"; };
+		4164A17320412B4600186B00 /* KafkaArrowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaArrowHeader.m; sourceTree = "<group>"; };
+		4164A17420412B4600186B00 /* KafkaReplicatorHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaReplicatorHeader.m; sourceTree = "<group>"; };
+		4164A17620412B4600186B00 /* KafkaReplicatorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaReplicatorLayer.m; sourceTree = "<group>"; };
+		4164A17720412B4600186B00 /* KafkaArcLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaArcLayer.m; sourceTree = "<group>"; };
+		4164A17820412B4600186B00 /* KafkaArcLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaArcLayer.h; sourceTree = "<group>"; };
+		4164A17920412B4600186B00 /* KafkaReplicatorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaReplicatorLayer.h; sourceTree = "<group>"; };
+		4164A17A20412B4600186B00 /* KafkaAnimatableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaAnimatableProtocol.h; sourceTree = "<group>"; };
+		4164A17C20412B4600186B00 /* KafkaRefreshDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KafkaRefreshDefaults.m; sourceTree = "<group>"; };
+		4164A17D20412B4600186B00 /* KafkaRefreshDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefreshDefaults.h; sourceTree = "<group>"; };
+		4164A17F20412B4600186B00 /* KafkaRefreshStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefreshStyle.h; sourceTree = "<group>"; };
+		4164A18020412B4600186B00 /* KafkaRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KafkaRefresh.h; sourceTree = "<group>"; };
+		4164A18220412B4600186B00 /* Image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Image.bundle; sourceTree = "<group>"; };
+		4164A18320412B4600186B00 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		4164A18520412B4600186B00 /* WRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationBar.m; sourceTree = "<group>"; };
+		4164A18620412B4600186B00 /* WRCustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRCustomNavigationBar.h; sourceTree = "<group>"; };
+		4164A18720412B4600186B00 /* WRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationBar.h; sourceTree = "<group>"; };
+		4164A18820412B4600186B00 /* WRCustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRCustomNavigationBar.m; sourceTree = "<group>"; };
+		4164A18A20412B4600186B00 /* WRImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRImageHelper.m; sourceTree = "<group>"; };
+		4164A18B20412B4600186B00 /* WRImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRImageHelper.h; sourceTree = "<group>"; };
+		4164A18C20412B4600186B00 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		4164A18E20412B4600186B00 /* MarsTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarsTabBar.h; sourceTree = "<group>"; };
+		4164A18F20412B4600186B00 /* UITabBar+CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+CustomBadge.m"; sourceTree = "<group>"; };
+		4164A19020412B4600186B00 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		4164A19120412B4600186B00 /* MarsTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarsTabBar.m; sourceTree = "<group>"; };
+		4164A19220412B4600186B00 /* UITabBar+CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+CustomBadge.h"; sourceTree = "<group>"; };
+		4164A19320412B4600186B00 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		4164A19520412B4700186B00 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		4164A19A20412B4700186B00 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		4164A19C20412B4700186B00 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		4164A19F20412B4700186B00 /* UtilMars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilMars.h; sourceTree = "<group>"; };
+		4164A1C220412B5000186B00 /* Api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		4164A1C620412C0D00186B00 /* PlaneController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaneController.h; sourceTree = "<group>"; };
+		4164A1C720412C0D00186B00 /* PlaneController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaneController.m; sourceTree = "<group>"; };
+		4164A1C920412C1A00186B00 /* MineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
+		4164A1CA20412C1A00186B00 /* MineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
+		4164A1CE20412E1F00186B00 /* HUDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDTools.h; sourceTree = "<group>"; };
+		4164A1CF20412E1F00186B00 /* HUDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDTools.m; sourceTree = "<group>"; };
+		4164A1D120412E2000186B00 /* LogCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCategory.h; sourceTree = "<group>"; };
+		4164A1D220412E2000186B00 /* NSLog+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLog+Extension.h"; sourceTree = "<group>"; };
+		4164A1D320412E2000186B00 /* LogCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCategory.m; sourceTree = "<group>"; };
+		4164A1D420412E2000186B00 /* NSLog+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLog+Extension.m"; sourceTree = "<group>"; };
+		4164A1D820412E4100186B00 /* UIButton+Countdown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Countdown.h"; sourceTree = "<group>"; };
+		4164A1D920412E4100186B00 /* UIButton+Countdown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Countdown.m"; sourceTree = "<group>"; };
+		4164A1DB20412F9900186B00 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		4164A1DC20412F9900186B00 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		4164A1E0204146D000186B00 /* MHHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHHttpTool.m; sourceTree = "<group>"; };
+		4164A1E1204146D000186B00 /* MHHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHHttpTool.h; sourceTree = "<group>"; };
+		4164A1E32041470400186B00 /* AutoButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoButton.h; sourceTree = "<group>"; };
+		4164A1E42041470400186B00 /* AutoButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoButton.m; sourceTree = "<group>"; };
+		4164A1E72041496800186B00 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		4164A1E82041496800186B00 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
+		4189D23920411413000F533D /* PlanetAirCnC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetAirCnC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4189D23C20411414000F533D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4189D23D20411414000F533D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4189D23F20411414000F533D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4189D24020411414000F533D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4189D24320411414000F533D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4189D24520411414000F533D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4189D24820411414000F533D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4189D24A20411414000F533D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4189D24B20411414000F533D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4189D25120411414000F533D /* PlanetAirCnCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetAirCnCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4189D25520411414000F533D /* PlanetAirCnCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetAirCnCTests.m; sourceTree = "<group>"; };
+		4189D25720411414000F533D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4189D25C20411414000F533D /* PlanetAirCnCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetAirCnCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4189D26020411414000F533D /* PlanetAirCnCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetAirCnCUITests.m; sourceTree = "<group>"; };
+		4189D26220411414000F533D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41B851B72043984F00052DF7 /* UIButton+TouchOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+TouchOne.h"; sourceTree = "<group>"; };
+		41B851B82043984F00052DF7 /* UIButton+TouchOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TouchOne.m"; sourceTree = "<group>"; };
+		41B851C22043ACC700052DF7 /* CustomLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLoader.h; sourceTree = "<group>"; };
+		41B851C32043ACC700052DF7 /* CustomLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLoader.m; sourceTree = "<group>"; };
+		41B851C82044F2AE00052DF7 /* PlaneRankCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaneRankCell.h; sourceTree = "<group>"; };
+		41B851C92044F2AE00052DF7 /* PlaneRankCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaneRankCell.m; sourceTree = "<group>"; };
+		41B851CB204546FC00052DF7 /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		41B851CC204546FC00052DF7 /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		41B851CE20454A6500052DF7 /* SettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		41B851CF20454A6500052DF7 /* SettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		41B851D220463EB000052DF7 /* AutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
+		41B851D320463EB000052DF7 /* AutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
+		41B851D62046418400052DF7 /* UIView+MHExtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MHExtra.h"; sourceTree = "<group>"; };
+		41B851D72046418400052DF7 /* MBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBManager.m; sourceTree = "<group>"; };
+		41B851D82046418400052DF7 /* UIView+MHExtra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MHExtra.m"; sourceTree = "<group>"; };
+		41B851D92046418400052DF7 /* MBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBManager.h; sourceTree = "<group>"; };
+		41B851DD204648A700052DF7 /* TXScrollLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXScrollLabelView.h; sourceTree = "<group>"; };
+		41B851DE204648A700052DF7 /* UIView+TXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TXFrame.h"; sourceTree = "<group>"; };
+		41B851DF204648A700052DF7 /* TXScrollLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXScrollLabelView.m; sourceTree = "<group>"; };
+		41B851E0204648A700052DF7 /* UIView+TXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TXFrame.m"; sourceTree = "<group>"; };
+		41B851E32046725B00052DF7 /* TaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		41B851E42046725B00052DF7 /* TaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		41B851E62046768300052DF7 /* TaskOneViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskOneViewCell.h; sourceTree = "<group>"; };
+		41B851E72046768300052DF7 /* TaskOneViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskOneViewCell.m; sourceTree = "<group>"; };
+		41B851E9204679E800052DF7 /* TaskOneHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskOneHeaderView.h; sourceTree = "<group>"; };
+		41B851EA204679E800052DF7 /* TaskOneHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskOneHeaderView.m; sourceTree = "<group>"; };
+		41B851EC20467A6E00052DF7 /* TaaskTwoHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaaskTwoHeaderView.h; sourceTree = "<group>"; };
+		41B851ED20467A6E00052DF7 /* TaaskTwoHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaaskTwoHeaderView.m; sourceTree = "<group>"; };
+		41B851EF20467AF200052DF7 /* TaskFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskFooterView.h; sourceTree = "<group>"; };
+		41B851F020467AF200052DF7 /* TaskFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskFooterView.m; sourceTree = "<group>"; };
+		41B851F22046848900052DF7 /* TaskTwoViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskTwoViewCell.h; sourceTree = "<group>"; };
+		41B851F32046848900052DF7 /* TaskTwoViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskTwoViewCell.m; sourceTree = "<group>"; };
+		41B851F52046954E00052DF7 /* DiamondsRecordController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiamondsRecordController.h; sourceTree = "<group>"; };
+		41B851F62046954E00052DF7 /* DiamondsRecordController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondsRecordController.m; sourceTree = "<group>"; };
+		41B851F820469D7E00052DF7 /* DiamondsRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiamondsRecordCell.h; sourceTree = "<group>"; };
+		41B851F920469D7E00052DF7 /* DiamondsRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiamondsRecordCell.m; sourceTree = "<group>"; };
+		41B851FB204788D700052DF7 /* RecordForceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordForceController.h; sourceTree = "<group>"; };
+		41B851FC204788D700052DF7 /* RecordForceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordForceController.m; sourceTree = "<group>"; };
+		41B851FE2047892900052DF7 /* RecordForceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordForceCell.h; sourceTree = "<group>"; };
+		41B851FF2047892900052DF7 /* RecordForceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordForceCell.m; sourceTree = "<group>"; };
+		41B85201204790EF00052DF7 /* WkWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WkWebViewController.h; sourceTree = "<group>"; };
+		41B85202204790EF00052DF7 /* WkWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WkWebViewController.m; sourceTree = "<group>"; };
+		41B8520420479B6900052DF7 /* EnergyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnergyView.h; sourceTree = "<group>"; };
+		41B8520520479B6900052DF7 /* EnergyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnergyView.m; sourceTree = "<group>"; };
+		41E14231204916B60023FEC3 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		41E14232204916B60023FEC3 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		43AD4D6B8DB0382F5204E6B0 /* libPods-PlanetAirCnCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanetAirCnCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BEB47CBF661C220F86BA6D7 /* Pods-PlanetAirCnCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnCTests/Pods-PlanetAirCnCTests.release.xcconfig"; sourceTree = "<group>"; };
+		76E526F795E003BCCEBF951C /* Pods-PlanetAirCnCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnCUITests/Pods-PlanetAirCnCUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8598F98B64CD7C26C0B7F0D0 /* libPods-PlanetAirCnC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanetAirCnC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC00BFA7E92B3FE00B92F131 /* Pods-PlanetAirCnCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnCUITests/Pods-PlanetAirCnCUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB65C0B74154653C9FEF7DDF /* libPods-PlanetAirCnCUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlanetAirCnCUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA6285AEA4F29EDFC377B588 /* Pods-PlanetAirCnC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnC.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnC/Pods-PlanetAirCnC.release.xcconfig"; sourceTree = "<group>"; };
+		D780A217E1AF42911CF00417 /* Pods-PlanetAirCnC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanetAirCnC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanetAirCnC/Pods-PlanetAirCnC.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4189D23620411413000F533D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1248D98120B16C8251024B8 /* libPods-PlanetAirCnC.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D24E20411414000F533D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A19C9BF0369A7FA73741440B /* libPods-PlanetAirCnCTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D25920411414000F533D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7320ADFE620B826DE8B08047 /* libPods-PlanetAirCnCUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4163B402204CDC780067A2A9 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				4163B404204CDC780067A2A9 /* NSString+Extend.h */,
+				4163B406204CDC780067A2A9 /* NSString+Extend.m */,
+				4163B405204CDC780067A2A9 /* NSString+VerifyPhoneNumber.h */,
+				4163B403204CDC780067A2A9 /* NSString+VerifyPhoneNumber.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		4164A14A20412B4600186B00 /* BaseViewTools */ = {
+			isa = PBXGroup;
+			children = (
+				4164A18C20412B4600186B00 /* BaseNavigationController.h */,
+				4164A18320412B4600186B00 /* BaseNavigationController.m */,
+				4164A14B20412B4600186B00 /* KafkaRefresh */,
+				4164A18D20412B4600186B00 /* TabbarController */,
+				4164A18920412B4600186B00 /* WRImageHelper */,
+				4164A18420412B4600186B00 /* WRNavigationBar */,
+				4164A1DB20412F9900186B00 /* BaseViewController.h */,
+				4164A1DC20412F9900186B00 /* BaseViewController.m */,
+			);
+			path = BaseViewTools;
+			sourceTree = "<group>";
+		};
+		4164A14B20412B4600186B00 /* KafkaRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4164A14C20412B4600186B00 /* Configuration */,
+				4164A14F20412B4600186B00 /* Core */,
+				4164A15920412B4600186B00 /* Category */,
+				4164A16220412B4600186B00 /* UIKit */,
+				4164A17B20412B4600186B00 /* Default */,
+				4164A17E20412B4600186B00 /* Style */,
+				4164A18020412B4600186B00 /* KafkaRefresh.h */,
+				4164A18120412B4600186B00 /* Resource */,
+			);
+			path = KafkaRefresh;
+			sourceTree = "<group>";
+		};
+		4164A14C20412B4600186B00 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4164A14E20412B4600186B00 /* UIScrollView+KafkaConfiguration.h */,
+				4164A14D20412B4600186B00 /* UIScrollView+KafkaConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4164A14F20412B4600186B00 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4164A15620412B4600186B00 /* KafkaFootRefreshControl.h */,
+				4164A15320412B4600186B00 /* KafkaFootRefreshControl.m */,
+				4164A15520412B4600186B00 /* KafkaHeadRefreshControl.h */,
+				4164A15020412B4600186B00 /* KafkaHeadRefreshControl.m */,
+				4164A15720412B4600186B00 /* KafkaRefreshControl.h */,
+				4164A15120412B4600186B00 /* KafkaRefreshControl.m */,
+				4164A15220412B4600186B00 /* KafkaRefreshProtocol.h */,
+				4164A15820412B4600186B00 /* UIScrollView+Kafka.h */,
+				4164A15420412B4600186B00 /* UIScrollView+Kafka.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4164A15920412B4600186B00 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				4164A15B20412B4600186B00 /* CALayer+KafkaLayout.h */,
+				4164A15E20412B4600186B00 /* CALayer+KafkaLayout.m */,
+				4164A15A20412B4600186B00 /* NSObject+KafkaAnimation.h */,
+				4164A16020412B4600186B00 /* NSObject+KafkaAnimation.m */,
+				4164A15D20412B4600186B00 /* UIScrollView+KafkaLayout.h */,
+				4164A16120412B4600186B00 /* UIScrollView+KafkaLayout.m */,
+				4164A15C20412B4600186B00 /* UIView+KafkaLayout.h */,
+				4164A15F20412B4600186B00 /* UIView+KafkaLayout.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		4164A16220412B4600186B00 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				4164A16320412B4600186B00 /* FootKit */,
+				4164A16C20412B4600186B00 /* HeadKit */,
+				4164A17520412B4600186B00 /* LayerKit */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		4164A16320412B4600186B00 /* FootKit */ = {
+			isa = PBXGroup;
+			children = (
+				4164A16620412B4600186B00 /* KafkaArrowFooter.h */,
+				4164A16B20412B4600186B00 /* KafkaArrowFooter.m */,
+				4164A16420412B4600186B00 /* KafkaNativeFooter.h */,
+				4164A16820412B4600186B00 /* KafkaNativeFooter.m */,
+				4164A16720412B4600186B00 /* KafkaReplicatorFooter.h */,
+				4164A16A20412B4600186B00 /* KafkaReplicatorFooter.m */,
+				4164A16520412B4600186B00 /* KafkaRingIndicatorFooter.h */,
+				4164A16920412B4600186B00 /* KafkaRingIndicatorFooter.m */,
+			);
+			path = FootKit;
+			sourceTree = "<group>";
+		};
+		4164A16C20412B4600186B00 /* HeadKit */ = {
+			isa = PBXGroup;
+			children = (
+				4164A17020412B4600186B00 /* KafkaArrowHeader.h */,
+				4164A17320412B4600186B00 /* KafkaArrowHeader.m */,
+				4164A16D20412B4600186B00 /* KafkaNativeHeader.h */,
+				4164A17120412B4600186B00 /* KafkaNativeHeader.m */,
+				4164A16F20412B4600186B00 /* KafkaReplicatorHeader.h */,
+				4164A17420412B4600186B00 /* KafkaReplicatorHeader.m */,
+				4164A16E20412B4600186B00 /* KafkaRingIndicatorHeader.h */,
+				4164A17220412B4600186B00 /* KafkaRingIndicatorHeader.m */,
+			);
+			path = HeadKit;
+			sourceTree = "<group>";
+		};
+		4164A17520412B4600186B00 /* LayerKit */ = {
+			isa = PBXGroup;
+			children = (
+				4164A17A20412B4600186B00 /* KafkaAnimatableProtocol.h */,
+				4164A17820412B4600186B00 /* KafkaArcLayer.h */,
+				4164A17720412B4600186B00 /* KafkaArcLayer.m */,
+				4164A17920412B4600186B00 /* KafkaReplicatorLayer.h */,
+				4164A17620412B4600186B00 /* KafkaReplicatorLayer.m */,
+			);
+			path = LayerKit;
+			sourceTree = "<group>";
+		};
+		4164A17B20412B4600186B00 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				4164A17D20412B4600186B00 /* KafkaRefreshDefaults.h */,
+				4164A17C20412B4600186B00 /* KafkaRefreshDefaults.m */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		4164A17E20412B4600186B00 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				4164A17F20412B4600186B00 /* KafkaRefreshStyle.h */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		4164A18120412B4600186B00 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4164A18220412B4600186B00 /* Image.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4164A18420412B4600186B00 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				4164A18620412B4600186B00 /* WRCustomNavigationBar.h */,
+				4164A18820412B4600186B00 /* WRCustomNavigationBar.m */,
+				4164A18720412B4600186B00 /* WRNavigationBar.h */,
+				4164A18520412B4600186B00 /* WRNavigationBar.m */,
+			);
+			path = WRNavigationBar;
+			sourceTree = "<group>";
+		};
+		4164A18920412B4600186B00 /* WRImageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4164A18B20412B4600186B00 /* WRImageHelper.h */,
+				4164A18A20412B4600186B00 /* WRImageHelper.m */,
+			);
+			path = WRImageHelper;
+			sourceTree = "<group>";
+		};
+		4164A18D20412B4600186B00 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				4164A19320412B4600186B00 /* MainTabBarController.h */,
+				4164A19020412B4600186B00 /* MainTabBarController.m */,
+				4164A18E20412B4600186B00 /* MarsTabBar.h */,
+				4164A19120412B4600186B00 /* MarsTabBar.m */,
+				4164A19220412B4600186B00 /* UITabBar+CustomBadge.h */,
+				4164A18F20412B4600186B00 /* UITabBar+CustomBadge.m */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		4164A19420412B4700186B00 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				4163B402204CDC780067A2A9 /* NSString */,
+				41E14230204916AA0023FEC3 /* UIColor */,
+				41B851DC204648A700052DF7 /* ScrollLabelView */,
+				41B851D52046418400052DF7 /* UIViewTool */,
+				41B851D120463E9B00052DF7 /* AutoScrollLabel */,
+				41B851C12043ACB600052DF7 /* CustomLoader */,
+				4164A1DF204146D000186B00 /* NetWork */,
+				4164A1DE204146C600186B00 /* AutoButton */,
+				4164A1CC20412E1F00186B00 /* CountdownButton */,
+				4164A1D020412E2000186B00 /* LogCategory */,
+				4164A1CD20412E1F00186B00 /* ToastView */,
+				4164A19520412B4700186B00 /* Helper.h */,
+				4164A19A20412B4700186B00 /* Helper.m */,
+				4164A19C20412B4700186B00 /* PrefixHeader.pch */,
+				4164A19F20412B4700186B00 /* UtilMars.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		4164A1C420412BF200186B00 /* MineController */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1C920412C1A00186B00 /* MineController.h */,
+				4164A1CA20412C1A00186B00 /* MineController.m */,
+				41B851CB204546FC00052DF7 /* SettingController.h */,
+				41B851CC204546FC00052DF7 /* SettingController.m */,
+				41B851CE20454A6500052DF7 /* SettingCell.h */,
+				41B851CF20454A6500052DF7 /* SettingCell.m */,
+				41B851E32046725B00052DF7 /* TaskViewController.h */,
+				41B851E42046725B00052DF7 /* TaskViewController.m */,
+				41B851E62046768300052DF7 /* TaskOneViewCell.h */,
+				41B851E72046768300052DF7 /* TaskOneViewCell.m */,
+				41B851F22046848900052DF7 /* TaskTwoViewCell.h */,
+				41B851F32046848900052DF7 /* TaskTwoViewCell.m */,
+				41B851E9204679E800052DF7 /* TaskOneHeaderView.h */,
+				41B851EA204679E800052DF7 /* TaskOneHeaderView.m */,
+				41B851EC20467A6E00052DF7 /* TaaskTwoHeaderView.h */,
+				41B851ED20467A6E00052DF7 /* TaaskTwoHeaderView.m */,
+				41B851EF20467AF200052DF7 /* TaskFooterView.h */,
+				41B851F020467AF200052DF7 /* TaskFooterView.m */,
+			);
+			path = MineController;
+			sourceTree = "<group>";
+		};
+		4164A1C520412BF200186B00 /* PlaneController */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1C620412C0D00186B00 /* PlaneController.h */,
+				4164A1C720412C0D00186B00 /* PlaneController.m */,
+				41B8520420479B6900052DF7 /* EnergyView.h */,
+				41B8520520479B6900052DF7 /* EnergyView.m */,
+				41B851C82044F2AE00052DF7 /* PlaneRankCell.h */,
+				41B851C92044F2AE00052DF7 /* PlaneRankCell.m */,
+				41B851F52046954E00052DF7 /* DiamondsRecordController.h */,
+				41B851F62046954E00052DF7 /* DiamondsRecordController.m */,
+				41B851F820469D7E00052DF7 /* DiamondsRecordCell.h */,
+				41B851F920469D7E00052DF7 /* DiamondsRecordCell.m */,
+				41B851FB204788D700052DF7 /* RecordForceController.h */,
+				41B851FC204788D700052DF7 /* RecordForceController.m */,
+				41B851FE2047892900052DF7 /* RecordForceCell.h */,
+				41B851FF2047892900052DF7 /* RecordForceCell.m */,
+				415A07D52047DD96001448F6 /* InviteCodeController.h */,
+				415A07D62047DD96001448F6 /* InviteCodeController.m */,
+				41B85201204790EF00052DF7 /* WkWebViewController.h */,
+				41B85202204790EF00052DF7 /* WkWebViewController.m */,
+				41202046204E5DD8003D044C /* UIImage+QRcode.h */,
+				41202047204E5DD8003D044C /* UIImage+QRcode.m */,
+			);
+			path = PlaneController;
+			sourceTree = "<group>";
+		};
+		4164A1CC20412E1F00186B00 /* CountdownButton */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1D820412E4100186B00 /* UIButton+Countdown.h */,
+				4164A1D920412E4100186B00 /* UIButton+Countdown.m */,
+				41B851B72043984F00052DF7 /* UIButton+TouchOne.h */,
+				41B851B82043984F00052DF7 /* UIButton+TouchOne.m */,
+			);
+			path = CountdownButton;
+			sourceTree = "<group>";
+		};
+		4164A1CD20412E1F00186B00 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1CE20412E1F00186B00 /* HUDTools.h */,
+				4164A1CF20412E1F00186B00 /* HUDTools.m */,
+				4163B409204CF13E0067A2A9 /* DeviceDataLibrery.h */,
+				4163B40A204CF13E0067A2A9 /* DeviceDataLibrery.m */,
+			);
+			path = ToastView;
+			sourceTree = "<group>";
+		};
+		4164A1D020412E2000186B00 /* LogCategory */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1D120412E2000186B00 /* LogCategory.h */,
+				4164A1D220412E2000186B00 /* NSLog+Extension.h */,
+				4164A1D320412E2000186B00 /* LogCategory.m */,
+				4164A1D420412E2000186B00 /* NSLog+Extension.m */,
+			);
+			path = LogCategory;
+			sourceTree = "<group>";
+		};
+		4164A1DE204146C600186B00 /* AutoButton */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1E32041470400186B00 /* AutoButton.h */,
+				4164A1E42041470400186B00 /* AutoButton.m */,
+			);
+			path = AutoButton;
+			sourceTree = "<group>";
+		};
+		4164A1DF204146D000186B00 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1E1204146D000186B00 /* MHHttpTool.h */,
+				4164A1E0204146D000186B00 /* MHHttpTool.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		4164A1E62041495300186B00 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1E72041496800186B00 /* LoginController.h */,
+				4164A1E82041496800186B00 /* LoginController.m */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		4189D23020411413000F533D = {
+			isa = PBXGroup;
+			children = (
+				4189D23B20411413000F533D /* PlanetAirCnC */,
+				4189D25420411414000F533D /* PlanetAirCnCTests */,
+				4189D25F20411414000F533D /* PlanetAirCnCUITests */,
+				4189D23A20411413000F533D /* Products */,
+				4276556C87A2A779369FB77C /* Pods */,
+				96E1EE6F44FB83F15EE53562 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4189D23A20411413000F533D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4189D23920411413000F533D /* PlanetAirCnC.app */,
+				4189D25120411414000F533D /* PlanetAirCnCTests.xctest */,
+				4189D25C20411414000F533D /* PlanetAirCnCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4189D23B20411413000F533D /* PlanetAirCnC */ = {
+			isa = PBXGroup;
+			children = (
+				4164A1C220412B5000186B00 /* Api.h */,
+				4164A14A20412B4600186B00 /* BaseViewTools */,
+				4164A19420412B4700186B00 /* Tools */,
+				4189D23C20411414000F533D /* AppDelegate.h */,
+				4189D23D20411414000F533D /* AppDelegate.m */,
+				4189D23F20411414000F533D /* ViewController.h */,
+				4189D24020411414000F533D /* ViewController.m */,
+				4164A1E62041495300186B00 /* LoginController */,
+				4164A1C420412BF200186B00 /* MineController */,
+				4164A1C520412BF200186B00 /* PlaneController */,
+				4189D24220411414000F533D /* Main.storyboard */,
+				4189D24520411414000F533D /* Assets.xcassets */,
+				4189D24720411414000F533D /* LaunchScreen.storyboard */,
+				4189D24A20411414000F533D /* Info.plist */,
+				4189D24B20411414000F533D /* main.m */,
+			);
+			path = PlanetAirCnC;
+			sourceTree = "<group>";
+		};
+		4189D25420411414000F533D /* PlanetAirCnCTests */ = {
+			isa = PBXGroup;
+			children = (
+				4189D25520411414000F533D /* PlanetAirCnCTests.m */,
+				4189D25720411414000F533D /* Info.plist */,
+			);
+			path = PlanetAirCnCTests;
+			sourceTree = "<group>";
+		};
+		4189D25F20411414000F533D /* PlanetAirCnCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4189D26020411414000F533D /* PlanetAirCnCUITests.m */,
+				4189D26220411414000F533D /* Info.plist */,
+			);
+			path = PlanetAirCnCUITests;
+			sourceTree = "<group>";
+		};
+		41B851C12043ACB600052DF7 /* CustomLoader */ = {
+			isa = PBXGroup;
+			children = (
+				41B851C22043ACC700052DF7 /* CustomLoader.h */,
+				41B851C32043ACC700052DF7 /* CustomLoader.m */,
+			);
+			path = CustomLoader;
+			sourceTree = "<group>";
+		};
+		41B851D120463E9B00052DF7 /* AutoScrollLabel */ = {
+			isa = PBXGroup;
+			children = (
+				41B851D220463EB000052DF7 /* AutoScrollLabel.h */,
+				41B851D320463EB000052DF7 /* AutoScrollLabel.m */,
+			);
+			path = AutoScrollLabel;
+			sourceTree = "<group>";
+		};
+		41B851D52046418400052DF7 /* UIViewTool */ = {
+			isa = PBXGroup;
+			children = (
+				41B851D92046418400052DF7 /* MBManager.h */,
+				41B851D72046418400052DF7 /* MBManager.m */,
+				41B851D62046418400052DF7 /* UIView+MHExtra.h */,
+				41B851D82046418400052DF7 /* UIView+MHExtra.m */,
+			);
+			path = UIViewTool;
+			sourceTree = "<group>";
+		};
+		41B851DC204648A700052DF7 /* ScrollLabelView */ = {
+			isa = PBXGroup;
+			children = (
+				41B851DD204648A700052DF7 /* TXScrollLabelView.h */,
+				41B851DE204648A700052DF7 /* UIView+TXFrame.h */,
+				41B851DF204648A700052DF7 /* TXScrollLabelView.m */,
+				41B851E0204648A700052DF7 /* UIView+TXFrame.m */,
+			);
+			path = ScrollLabelView;
+			sourceTree = "<group>";
+		};
+		41E14230204916AA0023FEC3 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				41E14231204916B60023FEC3 /* UIColor+Hex.h */,
+				41E14232204916B60023FEC3 /* UIColor+Hex.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		4276556C87A2A779369FB77C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D780A217E1AF42911CF00417 /* Pods-PlanetAirCnC.debug.xcconfig */,
+				CA6285AEA4F29EDFC377B588 /* Pods-PlanetAirCnC.release.xcconfig */,
+				22FB085153DE90CBC9EC777C /* Pods-PlanetAirCnCTests.debug.xcconfig */,
+				6BEB47CBF661C220F86BA6D7 /* Pods-PlanetAirCnCTests.release.xcconfig */,
+				AC00BFA7E92B3FE00B92F131 /* Pods-PlanetAirCnCUITests.debug.xcconfig */,
+				76E526F795E003BCCEBF951C /* Pods-PlanetAirCnCUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96E1EE6F44FB83F15EE53562 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8598F98B64CD7C26C0B7F0D0 /* libPods-PlanetAirCnC.a */,
+				43AD4D6B8DB0382F5204E6B0 /* libPods-PlanetAirCnCTests.a */,
+				BB65C0B74154653C9FEF7DDF /* libPods-PlanetAirCnCUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4189D23820411413000F533D /* PlanetAirCnC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4189D26520411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnC" */;
+			buildPhases = (
+				3F5836823740FC7FA27069CE /* [CP] Check Pods Manifest.lock */,
+				4189D23520411413000F533D /* Sources */,
+				4189D23620411413000F533D /* Frameworks */,
+				4189D23720411413000F533D /* Resources */,
+				CAF6E49B436FFE1BC2E4F6C0 /* [CP] Embed Pods Frameworks */,
+				0357072E2D6DB32CAFD5F271 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlanetAirCnC;
+			productName = PlanetAirCnC;
+			productReference = 4189D23920411413000F533D /* PlanetAirCnC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4189D25020411414000F533D /* PlanetAirCnCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4189D26820411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnCTests" */;
+			buildPhases = (
+				4C2FBB6065AB7166F071BB1B /* [CP] Check Pods Manifest.lock */,
+				4189D24D20411414000F533D /* Sources */,
+				4189D24E20411414000F533D /* Frameworks */,
+				4189D24F20411414000F533D /* Resources */,
+				A65671D91133E827E393EB2B /* [CP] Embed Pods Frameworks */,
+				9E88BDC384555231FCA710D7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4189D25320411414000F533D /* PBXTargetDependency */,
+			);
+			name = PlanetAirCnCTests;
+			productName = PlanetAirCnCTests;
+			productReference = 4189D25120411414000F533D /* PlanetAirCnCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4189D25B20411414000F533D /* PlanetAirCnCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4189D26B20411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnCUITests" */;
+			buildPhases = (
+				4B1B9B597205475E499047E1 /* [CP] Check Pods Manifest.lock */,
+				4189D25820411414000F533D /* Sources */,
+				4189D25920411414000F533D /* Frameworks */,
+				4189D25A20411414000F533D /* Resources */,
+				FE8C4E7977870CB37CDF5E0F /* [CP] Embed Pods Frameworks */,
+				97C1FC7A410D05AA153991CB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4189D25E20411414000F533D /* PBXTargetDependency */,
+			);
+			name = PlanetAirCnCUITests;
+			productName = PlanetAirCnCUITests;
+			productReference = 4189D25C20411414000F533D /* PlanetAirCnCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4189D23120411413000F533D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "AirCnC车去车来";
+				TargetAttributes = {
+					4189D23820411413000F533D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					4189D25020411414000F533D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4189D23820411413000F533D;
+					};
+					4189D25B20411414000F533D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4189D23820411413000F533D;
+					};
+				};
+			};
+			buildConfigurationList = 4189D23420411413000F533D /* Build configuration list for PBXProject "PlanetAirCnC" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4189D23020411413000F533D;
+			productRefGroup = 4189D23A20411413000F533D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4189D23820411413000F533D /* PlanetAirCnC */,
+				4189D25020411414000F533D /* PlanetAirCnCTests */,
+				4189D25B20411414000F533D /* PlanetAirCnCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4189D23720411413000F533D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4189D24920411414000F533D /* LaunchScreen.storyboard in Resources */,
+				4189D24620411414000F533D /* Assets.xcassets in Resources */,
+				4189D24420411414000F533D /* Main.storyboard in Resources */,
+				4164A1B520412B4700186B00 /* Image.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D24F20411414000F533D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D25A20411414000F533D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0357072E2D6DB32CAFD5F271 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnC/Pods-PlanetAirCnC-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnC/Pods-PlanetAirCnC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F5836823740FC7FA27069CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanetAirCnC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B1B9B597205475E499047E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanetAirCnCUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C2FBB6065AB7166F071BB1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanetAirCnCTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97C1FC7A410D05AA153991CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnCUITests/Pods-PlanetAirCnCUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E88BDC384555231FCA710D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnCTests/Pods-PlanetAirCnCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65671D91133E827E393EB2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnCTests/Pods-PlanetAirCnCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF6E49B436FFE1BC2E4F6C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnC/Pods-PlanetAirCnC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8C4E7977870CB37CDF5E0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlanetAirCnCUITests/Pods-PlanetAirCnCUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4189D23520411413000F533D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4164A1AA20412B4700186B00 /* KafkaNativeFooter.m in Sources */,
+				4164A1B820412B4700186B00 /* WRCustomNavigationBar.m in Sources */,
+				4164A1D720412E2000186B00 /* NSLog+Extension.m in Sources */,
+				4164A1B320412B4700186B00 /* KafkaArcLayer.m in Sources */,
+				4164A1BE20412B4700186B00 /* Helper.m in Sources */,
+				4164A1AF20412B4700186B00 /* KafkaRingIndicatorHeader.m in Sources */,
+				41B851DB2046418400052DF7 /* UIView+MHExtra.m in Sources */,
+				41B851FA20469D7E00052DF7 /* DiamondsRecordCell.m in Sources */,
+				4164A1A920412B4700186B00 /* UIScrollView+KafkaLayout.m in Sources */,
+				4164A1AC20412B4700186B00 /* KafkaReplicatorFooter.m in Sources */,
+				4164A1B920412B4700186B00 /* WRImageHelper.m in Sources */,
+				4164A1E92041496800186B00 /* LoginController.m in Sources */,
+				4164A1D620412E2000186B00 /* LogCategory.m in Sources */,
+				4163B407204CDC780067A2A9 /* NSString+VerifyPhoneNumber.m in Sources */,
+				4164A1C820412C0D00186B00 /* PlaneController.m in Sources */,
+				41B851F72046954E00052DF7 /* DiamondsRecordController.m in Sources */,
+				4164A1A520412B4700186B00 /* UIScrollView+Kafka.m in Sources */,
+				4164A1E52041470400186B00 /* AutoButton.m in Sources */,
+				41B85203204790EF00052DF7 /* WkWebViewController.m in Sources */,
+				4163B408204CDC780067A2A9 /* NSString+Extend.m in Sources */,
+				41B851B92043984F00052DF7 /* UIButton+TouchOne.m in Sources */,
+				41E14233204916B60023FEC3 /* UIColor+Hex.m in Sources */,
+				41B851C42043ACC700052DF7 /* CustomLoader.m in Sources */,
+				4164A1A720412B4700186B00 /* UIView+KafkaLayout.m in Sources */,
+				4164A1B120412B4700186B00 /* KafkaReplicatorHeader.m in Sources */,
+				41B851CA2044F2AE00052DF7 /* PlaneRankCell.m in Sources */,
+				4164A1AE20412B4700186B00 /* KafkaNativeHeader.m in Sources */,
+				4164A1AD20412B4700186B00 /* KafkaArrowFooter.m in Sources */,
+				41B851E1204648A700052DF7 /* TXScrollLabelView.m in Sources */,
+				4164A1B220412B4700186B00 /* KafkaReplicatorLayer.m in Sources */,
+				41B851F120467AF200052DF7 /* TaskFooterView.m in Sources */,
+				41B851D020454A6500052DF7 /* SettingCell.m in Sources */,
+				4164A1B720412B4700186B00 /* WRNavigationBar.m in Sources */,
+				41B851D420463EB000052DF7 /* AutoScrollLabel.m in Sources */,
+				4164A1B420412B4700186B00 /* KafkaRefreshDefaults.m in Sources */,
+				4164A1A320412B4700186B00 /* KafkaRefreshControl.m in Sources */,
+				4164A1A820412B4700186B00 /* NSObject+KafkaAnimation.m in Sources */,
+				4189D24120411414000F533D /* ViewController.m in Sources */,
+				4164A1DD20412F9900186B00 /* BaseViewController.m in Sources */,
+				4164A1D520412E2000186B00 /* HUDTools.m in Sources */,
+				41B851E52046725B00052DF7 /* TaskViewController.m in Sources */,
+				41B851E2204648A700052DF7 /* UIView+TXFrame.m in Sources */,
+				4164A1BC20412B4700186B00 /* MarsTabBar.m in Sources */,
+				41B851DA2046418400052DF7 /* MBManager.m in Sources */,
+				41B851FD204788D700052DF7 /* RecordForceController.m in Sources */,
+				4164A1A420412B4700186B00 /* KafkaFootRefreshControl.m in Sources */,
+				41B8520620479B6900052DF7 /* EnergyView.m in Sources */,
+				4164A1B020412B4700186B00 /* KafkaArrowHeader.m in Sources */,
+				41202048204E5DD8003D044C /* UIImage+QRcode.m in Sources */,
+				41B851E82046768300052DF7 /* TaskOneViewCell.m in Sources */,
+				4164A1E2204146D000186B00 /* MHHttpTool.m in Sources */,
+				41B851EB204679E800052DF7 /* TaskOneHeaderView.m in Sources */,
+				4163B40B204CF13E0067A2A9 /* DeviceDataLibrery.m in Sources */,
+				4189D24C20411414000F533D /* main.m in Sources */,
+				4164A1DA20412E4100186B00 /* UIButton+Countdown.m in Sources */,
+				41B851EE20467A6E00052DF7 /* TaaskTwoHeaderView.m in Sources */,
+				4189D23E20411414000F533D /* AppDelegate.m in Sources */,
+				4164A1CB20412C1A00186B00 /* MineController.m in Sources */,
+				41B851CD204546FC00052DF7 /* SettingController.m in Sources */,
+				4164A1A220412B4700186B00 /* KafkaHeadRefreshControl.m in Sources */,
+				4164A1B620412B4700186B00 /* BaseNavigationController.m in Sources */,
+				4164A1BA20412B4700186B00 /* UITabBar+CustomBadge.m in Sources */,
+				41B851F42046848900052DF7 /* TaskTwoViewCell.m in Sources */,
+				4164A1AB20412B4700186B00 /* KafkaRingIndicatorFooter.m in Sources */,
+				41B852002047892900052DF7 /* RecordForceCell.m in Sources */,
+				4164A1A620412B4700186B00 /* CALayer+KafkaLayout.m in Sources */,
+				4164A1BB20412B4700186B00 /* MainTabBarController.m in Sources */,
+				4164A1A120412B4700186B00 /* UIScrollView+KafkaConfiguration.m in Sources */,
+				415A07D72047DD96001448F6 /* InviteCodeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D24D20411414000F533D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4189D25620411414000F533D /* PlanetAirCnCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4189D25820411414000F533D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4189D26120411414000F533D /* PlanetAirCnCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4189D25320411414000F533D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4189D23820411413000F533D /* PlanetAirCnC */;
+			targetProxy = 4189D25220411414000F533D /* PBXContainerItemProxy */;
+		};
+		4189D25E20411414000F533D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4189D23820411413000F533D /* PlanetAirCnC */;
+			targetProxy = 4189D25D20411414000F533D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4189D24220411414000F533D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4189D24320411414000F533D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4189D24720411414000F533D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4189D24820411414000F533D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4189D26320411414000F533D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4189D26420411414000F533D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4189D26620411414000F533D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D780A217E1AF42911CF00417 /* Pods-PlanetAirCnC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PlanetAirCnC/Tools/PrefixHeader.pch";
+				INFOPLIST_FILE = PlanetAirCnC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4189D26720411414000F533D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA6285AEA4F29EDFC377B588 /* Pods-PlanetAirCnC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PlanetAirCnC/Tools/PrefixHeader.pch";
+				INFOPLIST_FILE = PlanetAirCnC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4189D26920411414000F533D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22FB085153DE90CBC9EC777C /* Pods-PlanetAirCnCTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				INFOPLIST_FILE = PlanetAirCnCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanetAirCnC.app/PlanetAirCnC";
+			};
+			name = Debug;
+		};
+		4189D26A20411414000F533D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BEB47CBF661C220F86BA6D7 /* Pods-PlanetAirCnCTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				INFOPLIST_FILE = PlanetAirCnCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnCTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanetAirCnC.app/PlanetAirCnC";
+			};
+			name = Release;
+		};
+		4189D26C20411414000F533D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC00BFA7E92B3FE00B92F131 /* Pods-PlanetAirCnCUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				INFOPLIST_FILE = PlanetAirCnCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PlanetAirCnC;
+			};
+			name = Debug;
+		};
+		4189D26D20411414000F533D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E526F795E003BCCEBF951C /* Pods-PlanetAirCnCUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UKVCX749CW;
+				INFOPLIST_FILE = PlanetAirCnCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Planet-AirCnC.www.PlanetAirCnCUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PlanetAirCnC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4189D23420411413000F533D /* Build configuration list for PBXProject "PlanetAirCnC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4189D26320411414000F533D /* Debug */,
+				4189D26420411414000F533D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4189D26520411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4189D26620411414000F533D /* Debug */,
+				4189D26720411414000F533D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4189D26820411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4189D26920411414000F533D /* Debug */,
+				4189D26A20411414000F533D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4189D26B20411414000F533D /* Build configuration list for PBXNativeTarget "PlanetAirCnCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4189D26C20411414000F533D /* Debug */,
+				4189D26D20411414000F533D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4189D23120411413000F533D /* Project object */;
+}
