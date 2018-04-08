@@ -14,4 +14,7 @@
 
 - (void)cancleCountDown;
 
+//@property (nonatomic, strong) dispatch_source_t timer;
+
+
 @end

@@ -8,11 +8,13 @@
 
 #import "LoginController.h"
 #import "UIButton+Countdown.h"
+#import "DisplayImageView.h"
+#import "MainTabBarController.h"
 
 #define MSG(msg) [[[UIAlertView alloc]initWithTitle:@"提示" message:(msg) delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
 
 
-@interface LoginController ()
+@interface LoginController ()<DisplayImageViewDeletage>
 
 @property (nonatomic, strong) UIImageView *imageview;
 @property (nonatomic, strong) UILabel *titleL;
@@ -25,7 +27,6 @@
 @property (nonatomic, strong) UITextField *codeText;
 @property (nonatomic, strong) UIButton *codeBtn;
 @property (nonatomic, strong) UIView *line2;
-
 
 @property (nonatomic, strong) UIButton *proBtn;
 @property (nonatomic, strong) UIButton *loginBtn;
@@ -56,6 +57,18 @@
     
     [self.customNavBar wr_setBackgroundAlpha:0];
     [self setHeadView];
+    
+    
+//    //是否是第一次打开应用
+//    if ([Helper isFirstOpenApp]) {
+//        DisplayImageView *view = [[DisplayImageView alloc] initWithFrame:self.view.bounds];
+//        view.deletage = self;
+//        [self.view addSubview:view];
+//    }else{
+//        [self setHeadView];
+//    }
+    
+    
 }
 
 - (void)setHeadView{
@@ -143,9 +156,9 @@
     [self setNickOrInviteCodeView];
     
     _inviteCodeText.hidden = YES;
-     _inviteCodeLine.hidden = YES;
-     _nickNameText.hidden = YES;
-     _nickNameLine.hidden = YES;
+    _inviteCodeLine.hidden = YES;
+    _nickNameText.hidden = YES;
+    _nickNameLine.hidden = YES;
 
 }
 
@@ -157,8 +170,8 @@
     
     _proBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 10*scale_h, kWidth-40, 30*scale_h)];
     [_proBtn setTitle:@"  我已阅读并同意《用户服务协议》" forState:0];
-     [_proBtn setImage:[UIImage imageNamed:@"checkbox_off"] forState:0];
-     [_proBtn setImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateSelected];
+    [_proBtn setImage:[UIImage imageNamed:@"checkbox_off"] forState:0];
+    [_proBtn setImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateSelected];
     [_proBtn setTitleColor:[UIColor whiteColor] forState:0];
     _proBtn.titleLabel.font = [UIFont systemFontOfSize:15*scale_h];
     _proBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
@@ -168,14 +181,41 @@
     [_nicknameback addSubview:_proBtn];
     
     _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 60*scale_h, kWidth-40, 50*scale_h)];
-    [_loginBtn setTitle:@"开启纷享城之旅" forState:0];
+    [_loginBtn setTitle:@"开启纷享之旅" forState:0];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:0];
     [_loginBtn setBackgroundImage:[UIImage imageNamed:@"background_login_btn"] forState:0];
     _loginBtn.titleLabel.font = [UIFont systemFontOfSize:15*scale_h];
     _loginBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
-    [_loginBtn addTarget:self action:@selector(clickSendButton) forControlEvents:UIControlEventTouchUpInside];
+    [_loginBtn addTarget:self action:@selector(loginMethod) forControlEvents:UIControlEventTouchUpInside];
     [_nicknameback addSubview:_loginBtn];
 }
+#pragma mark - 注册
+- (void)loginMethod{
+    
+//    NSString *token =  [Helper getValueForKey:USER_Token];
+    NSDictionary *paramter = @{@"mobileno" : _phoneText.text,
+                               @"nickname" : _nickNameText.text,
+                               @"password" : @"2012110446",
+                               @"invitecode" : _inviteCodeText.text,
+                               @"identifyingcode" : _codeText.text,
+                               @"sourcetype" : @"3",
+                               };
+    [MHHttpTool POST:@"http://127.0.0.1:5000/login" parameters:paramter success:^(NSDictionary * _Nullable responseDic) {
+        DebugLog(@"%@",responseDic);
+
+       
+        
+      
+            
+            
+      
+    } failure:^(NSError * _Nonnull error) {
+       
+        [HUDTools showText:@"网络出错" withView:self.view withDelay:1.5];
+    }];
+    
+}
+
 #pragma mark - 用户服务协议
 - (void)agreeUserProtocol:(UIButton *)button{
    _proBtn.selected = YES;
@@ -206,6 +246,17 @@
         //................
         
     }];
+}
+
+
+/**
+ 进入主界面
+ */
+#pragma mark - 进入主界面 切换跟视图
+- (void)goToMainViewController{
+    
+    MainTabBarController *mainVC = [[MainTabBarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
 }
 
 

@@ -8,13 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^EnergyViewChargeBlock)(NSString *energy);
+/**
+  协议(procotol) 声明
+  */
+@protocol EnergyViewDelegate <NSObject>
+
+//  ***********  协议(procotol) 定义方法（函数） ***********  //
+- (void)energyViewClickButton:(NSInteger)tag;
+
+@end
+
+typedef void(^EnergyViewChargeBlock)(NSInteger tag);
+
 
 @interface EnergyView : UIView
 
 @property (nonatomic, copy) EnergyViewChargeBlock energyBlock;
 
+@property (nonatomic, weak) id<EnergyViewDelegate> delegate;
 
-- (void)initWithEnergyViewByEnergy:(NSString *)energy;
+//保存控件的数组
+@property (nonatomic, strong) NSMutableArray *viewArr;
+
+
+
+
+- (void)setViewFrameByRandom:(NSInteger)count;
+
+
 
 @end

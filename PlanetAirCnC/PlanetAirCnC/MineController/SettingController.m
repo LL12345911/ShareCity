@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//     [self setStatusBarBackgroundImage:[UIImage imageNamed:@"icon_settings"]];
 
     _titleArr = @[@"当前账号",@"姓名",@"身份证",@"芝麻分",@"版本号",@"联系我们"];
     self.customNavBar.title = @"账户设置";

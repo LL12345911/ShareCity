@@ -37,6 +37,8 @@
     // 设置初始导航栏透明度
     [self.customNavBar wr_setBackgroundAlpha:0];
     
+//    [self setStatusBarBackgroundImage:[UIImage imageNamed:@"millcolorGrad"]];
+    
     [self.view addSubview:self.tableview];
     [self.view insertSubview:self.customNavBar aboveSubview:self.tableview];
     [_tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];

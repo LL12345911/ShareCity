@@ -68,10 +68,10 @@
     controller.tabBarItem.image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = [[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //未选中字体颜色
-    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:[UIFont systemFontOfSize:13*scale_h]} forState:UIControlStateNormal];
+    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateNormal];
     
     //选中字体颜色
-    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kOrangeColor,NSFontAttributeName:[UIFont systemFontOfSize:13*scale_h]} forState:UIControlStateSelected];
+    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kOrangeColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateSelected];
     //包装导航控制器
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:controller];
     
