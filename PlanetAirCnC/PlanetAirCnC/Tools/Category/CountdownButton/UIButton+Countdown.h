@@ -10,9 +10,11 @@
 
 @interface UIButton (Countdown)
 
-- (void)startCountDownTime:(int)time withCountDownBlock:(void(^)(void))countDownBlock;
-
+//- (void)startCountDownTime:(int)time textColor:(UIColor *)color withCountDownBlock:(void(^)(void))countDownBlock;
+- (void)startCountDownTime:(int)time textNormalColor:(UIColor *)normalColor  textColor:(UIColor *)color withCountDownBlock:(void(^)(void))countDownBlock;
 - (void)cancleCountDown;
+
+
 
 //@property (nonatomic, strong) dispatch_source_t timer;
 

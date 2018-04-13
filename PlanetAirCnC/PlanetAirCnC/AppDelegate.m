@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "MainTabBarController.h"
-
+#import "LoginController.h"
 #import <UserNotifications/UserNotifications.h>
-
+#import "BaseNavigationController.h"
 
 #define kNotificationCategoryIdentifile @"kNotificationCategoryIdentifile"
 #define kNotificationActionIdentifileStar @"kNotificationActionIdentifileStar"
@@ -32,6 +32,10 @@
     //[NSThread sleepForTimeInterval:3.0]; //设置启动页面时间,系统默认1秒
     //记录应用打开次数
     [Helper recordAppOpenTimes];
+    // AppDelegate 进行全局设置
+    if (@available(iOS 11.0, *)){
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }
     /**
      IQKeyboardManager
      */
@@ -39,33 +43,45 @@
     keyboardManager.enable = YES; // 控制整个功能是否启用
     keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
     keyboardManager.shouldToolbarUsesTextFieldTintColor = YES; // 控制键盘上的工具条文字颜色是否用户自定义
-    keyboardManager.toolbarManageBehaviour = IQAutoToolbarBySubviews; // 有多个输入框时，可以通过点击Toolbar 上的“前一个”“后一个”按钮来实现移动到不同的输入框
+    keyboardManager.toolbarManageBehaviour = IQAutoToolbarBySubviews; // 有多个输入框时,通过点击“前一个”“后一个”按钮来实现移动到不同的输入框
     keyboardManager.enableAutoToolbar = YES; // 控制是否显示键盘上的工具条
     
-//    [[IQKeyboardManager sharedManager] disableInViewControllerClass:[ViewController class]];
+//[Helper setValue:@"" forkey:USER_Token];
+    
+    //用户已经登录过，进入首页，没有则进入登录界面  //如果token存在，则直接登录，
+    //[Helper setValue:@"5d2881e6941f5442305a3e02843560e3" forkey:USER_Token];
+    NSString *token =  ValidStr([Helper getValueForKey:USER_Token]) ? [Helper getValueForKey:USER_Token]:@"" ;
+    if (token.length > 2) {
+        //如果token存在，则直接进入主页，
+        self.window.rootViewController = [[MainTabBarController alloc] init];
+    }else{
+        LoginController* loginView = [[LoginController alloc] init];
+        BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:loginView];
+        self.window.rootViewController = nav;
+    }
+    
+    //判断是否是第一次启动
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
+        //设置本地语言
+        if ([self isChineseLanguage]) {
+            NSString *languageStr = @"zh-Hans";
+            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
+        }else{
+            NSString *languageStr = @"en";
+            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
+        }
+    }
 
-    
-//    //用户已经登录过，进入首页，没有则进入登录界面  //如果token存在，则直接登录，
-//    //[Helper setValue:@"5d2881e6941f5442305a3e02843560e3" forkey:USER_Token];
-//    NSString *token =  ValidStr([Helper getValueForKey:USER_Token]) ? [Helper getValueForKey:USER_Token]:@"" ;
-//    NSString *isAutoLogin =  ValidStr([Helper getValueForKey:IsAutoLogin]) ? [Helper getValueForKey:IsAutoLogin]:@"";
-//    if (token.length > 2 && [isAutoLogin intValue] == 1) {
-//        //如果token存在，则直接进入主页，
-//        self.window.rootViewController = [[MainViewController alloc] init];
-//    }else{
-//        self.window.rootViewController = [[LoginViewController alloc] init];
-//    }
-    
     
     //ios自带推送
     [self registerRemoteNotification];
     [self registLocationNotification];
     
 //    [self choiseLocation];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[MainTabBarController alloc] init];
+  
     [self.window makeKeyAndVisible];
+//    self.window.windowLevel = UIWindowLevelAlert;
 
     
     return YES;
@@ -180,6 +196,8 @@
     } else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        
+        
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
@@ -223,6 +241,51 @@
     NSLog(@"\n>>>[Receive RemoteNotification]:%@\n\n", userInfo);
     
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    NSDictionary *infoDic = [NSDictionary dictionaryWithDictionary:userInfo[@"aps"]];//aps
+    
+//    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
+//        [self sendiOS10LocalNotification];
+//    } else {
+////        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+////        //触发通知时间
+////        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+////        //重复间隔
+////        //    localNotification.repeatInterval = kCFCalendarUnitMinute;
+////        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+////        //通知内容
+////        localNotification.alertBody = infoDic[@"alert"];
+////        localNotification.applicationIconBadgeNumber = 1;
+////        localNotification.soundName = UILocalNotificationDefaultSoundName;
+////        //通知参数
+////        localNotification.userInfo = @{kLocalNotificationKey: @"iOS8推送"};
+////        localNotification.category = kNotificationCategoryIdentifile;
+////        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+//    }
+    
+    
+    //定义本地通知对象
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //设置调用时间
+    notification.timeZone = [NSTimeZone localTimeZone];
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:2.0];//通知触发的时间，10s以后
+    notification.repeatInterval = 2;//通知重复次数
+    notification.repeatCalendar=[NSCalendar currentCalendar];//当前日历，使用前最好设置时区等信息以便能够自动同步时间
+    
+    //设置通知属性
+    notification.alertBody = infoDic[@"alert"];;//[NSString stringWithFormat:@"Agent-%d",arc4random()%100]; //通知主体
+//    notification.applicationIconBadgeNumber += 1;//应用程序图标右上角显示的消息数
+//    notification.alertAction = @"打开应用"; //待机界面的滑动动作提示
+    notification.alertLaunchImage = @"Default";//通过点击通知打开应用时的启动图片,这里使用程序启动图片
+    notification.soundName = UILocalNotificationDefaultSoundName;//收到通知时播放的声音，默认消息声音
+    //    notification.soundName=@"msg.caf";//通知声音（需要真机才能听到声音）
+    
+    //设置用户信息
+//    notification.userInfo = userInfo;//@{@"id": @1, @"user": @"cloudox"};//绑定到通知上的其他附加信息
+//    notification.alertBody = infoDic[@"alert"];
+    //调用通知
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
 }
 
 
@@ -284,7 +347,24 @@
 
 
 
+#pragma mark --- 获取系统语言
+- (NSString *)getCurrentLanguage
+{
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    return currentLanguage;
+}
 
+#pragma mark --- 判断当前系统语言为中文
+- (BOOL)isChineseLanguage
+{
+    BOOL isChinese = NO;
+    if ([[self getCurrentLanguage] rangeOfString:@"zh-Hans"].length > 0) {
+        isChinese = YES;
+        NSLog(@"当前中文");
+    }
+    return isChinese;
+}
 
 
 

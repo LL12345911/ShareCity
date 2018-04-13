@@ -111,6 +111,11 @@ _Pragma("clang diagnostic pop") \
 
 #define RGBcolor(color) [UIColor colorWithHexString:color]
 
+
+#define kNavColor RGBCOLOR(0xfbb732)//
+#define kOrangeRed RGBCOLOR(0xff7200)//
+
+
 //颜色 色值
 #define kBlueColor RGBCOLOR(0x00a1e5)//所有的蓝色色值
 #define kOrangeColor RGBCOLOR(0xe75c01)//所有橙色色值 0xe75c01

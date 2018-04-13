@@ -41,7 +41,7 @@
 #define Api_h
 
 //  测试服务器
-#define AppApi @"http://127.0.0.1:8008" //测试地址
+#define AppApi @"http://192.168.0.169:8008" //测试地址
 //#define AppImage @"http://192.168.0.211:8087"  //前缀测试
 //#define AppImage2 @"http://192.168.0.211:8083"  //前缀测试
 
@@ -52,11 +52,40 @@
 
 #define Api @"newapi/" //接口
 //注册
-#define Api_signup [NSString stringWithFormat:@"%@/v1/userinfo/getusermoney",AppApi]
+#define Api_signup [NSString stringWithFormat:@"%@/v1/userinfo/signup",AppApi]
 //登录接口
 #define Api_login [NSString stringWithFormat:@"%@/v1/userinfo/login",AppApi]
+//验证码登录：/v1/userinfo/smslogin
+#define Api_smslogin [NSString stringWithFormat:@"%@/v1/userinfo/smslogin",AppApi]
 //获取验证码
 #define Api_mobilecode [NSString stringWithFormat:@"%@/v1/userinfo/getmobilecode",AppApi]
+//设置1代表 登陆密码  2代表交易密码
+#define Api_resetpwd [NSString stringWithFormat:@"%@/v1/userinfo/resetpwd",AppApi]
+//获取国家接口
+#define Api_getcountrylist [NSString stringWithFormat:@"%@/v1/baseinfo/getcountrylist",AppApi]
+//设置页面
+#define Api_getuserinfo [NSString stringWithFormat:@"%@/v1/userinfo/getuserinfo",AppApi]
+//添加用户姓名
+#define Api_updatenameinfo  [NSString stringWithFormat:@"%@/v1/userinfo/updatenameinfo",AppApi]
+//修改邮箱
+#define Api_updatemail  [NSString stringWithFormat:@"%@/v1/userinfo/updatemail",AppApi]
+//获取常用地址
+#define Api_getpurseassetslist [NSString stringWithFormat:@"%@/v1/userinfo/getpurseassetslist",AppApi]
+//创建/修改钱包
+#define Api_editpurseassetsinfo  [NSString stringWithFormat:@"%@/v1/userinfo/editpurseassetsinfo",AppApi]
+//获取用户币种
+#define Api_getcurrencylist  [NSString stringWithFormat:@"%@/v1/userinfo/getcurrencylist",AppApi]
+//获取所有币种信息
+#define Api_getallcurrencylist  [NSString stringWithFormat:@"%@/v1/userinfo/getallcurrencylist",AppApi]
+//增加货币接口
+#define Api_setcurrency  [NSString stringWithFormat:@"%@/v1/userinfo/setcurrency",AppApi]
+
+//增加货币接口 /v1/userinfo/setcurrency
+//传递参数：currencyid  userid  type  token 。type=1代表增加 type=2代表删除
+
+
+
+
 //获取发放纷享钻列表接口
 #define Api_diamondlist [NSString stringWithFormat:@"%@/v1/userinfo/getunpaydiamondlist",AppApi]
 //获取纷享城资产接口

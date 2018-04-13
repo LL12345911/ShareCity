@@ -16,6 +16,12 @@
 @property (nonatomic, strong) UIButton *activeBtn;
 @property (nonatomic, strong) CustomLoader *loader;
 
+@property (nonatomic, strong) UIWindow *window;
+
+
+@property (nonatomic, strong) UIView *indicatorBack;
+@property (nonatomic, strong) UIActivityIndicatorView *indicator;
+
 @end
 
 @implementation BaseViewController
@@ -29,17 +35,69 @@
 
     //设置导航栏背景图片
     [self setupNavBarBackgroundImage:nil];
+    
     //设置导航栏的左边 返回按钮的图片
     [self setLeftButtonWithImage];
     //设置空白视图
     [self setBlankView];
     
-//    [self setStatusBarBackgroundColor:[UIColor redColor]];
-//    [self setStatusBarBackgroundImage:[UIImage imageNamed:@"millcolorGrad"]];
+//    [self setStatusBarBackgroundColor:kNavColor];
+    
+    
+//    [self setStatusBarBackgroundImage:[UIImage imageNamed:@"navImage"]];
     
     //设置状态栏 字体颜色为 白色
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+}
+
+
+- (void)startLoading{
+    
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//    window.windowLevel = UIWindowLevelAlert;
+    
+    _window  = [UIApplication sharedApplication].keyWindow;
+//    _window.windowLevel = UIWindowLevelAlert;
+    
+   _indicatorBack = [[UIView alloc] init];
+    _indicatorBack.frame = CGRectMake(0, 0, kWidth, kHeight);
+    _indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    [_window addSubview:_indicatorBack];
+    
+    _indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //设置显示位置
+    _indicator.center = CGPointMake(kWidth/2.0, kHeight/2.0);
+    _indicator.hidesWhenStopped = NO;
+//    _indicator.color = [UIColor whiteColor];
+    [_indicatorBack addSubview:_indicator];
+    [_indicator startAnimating];
+}
+
+- (void)stopLoading{
+//    [_indicator stopAnimating];
+//    _window.windowLevel = UIWindowLevelNormal;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_indicatorBack removeAllSubviews];
+        _indicatorBack.frame = CGRectMake(0, kHeight, kWidth, kHeight);
+        [_indicator removeAllSubviews];
+        
+    });
+    
+    
+}
+
+
+- (void)stopLoading:(float)time{
+    //    [_indicator stopAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_indicatorBack removeAllSubviews];
+        _indicatorBack.frame = CGRectMake(0, kHeight, kWidth, kHeight);
+        [_indicator removeAllSubviews];
+        
+    });
+    
+    
 }
 
 //设置状态栏 背景色 为 透明
@@ -80,9 +138,9 @@
 }
 
 
-//- (UIStatusBarStyle)preferredStatusBarStyle{
-//    return UIStatusBarStyleLightContent;
-//}
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)setShowIndicatorView:(BOOL)showIndicatorView{
     if (showIndicatorView) {
@@ -157,7 +215,7 @@
     [self.view addSubview:self.customNavBar];
     
     // 设置自定义导航栏背景图片
-    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"millcolorGrad"];
+    self.customNavBar.barBackgroundImage = [UIImage imageNamed:@"navImage"];
     
     if (imageName.length > 0) {
         self.customNavBar.barBackgroundImage = [UIImage imageNamed:imageName];

@@ -85,7 +85,19 @@
     return self;
 }
 
+
+
+
+//- (void)wr_setRightButtonSEl:(SEL)action{
+//    [self.rightButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+//}
+//- (void)wr_setLeftButtonSEl:(SEL)action{
+//     [self.leftButton addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+//}
+
+
 -(void)setupView {
+    self.userInteractionEnabled = YES;
     [self addSubview:self.backgroundView];
     [self addSubview:self.backgroundImageView];
     [self addSubview:self.leftButton];
@@ -112,6 +124,7 @@
     self.rightButton.frame = CGRectMake(kWRScreenWidth - buttonWidth - margin, top, buttonWidth, buttonHeight);
     self.titleLable.frame = CGRectMake((kWRScreenWidth - titleLabelWidth) / 2, top, titleLabelWidth, titleLabelHeight);
     self.bottomLine.frame = CGRectMake(0, (CGFloat)(self.bounds.size.height-0.5), kWRScreenWidth, 0.5);
+//    [self.rightButton sizeToFit];
 }
 
 #pragma mark - 导航栏左右按钮事件
@@ -172,6 +185,11 @@
     [self.rightButton setImage:highlighted forState:UIControlStateHighlighted];
     [self.rightButton setTitle:title forState:UIControlStateNormal];
     [self.rightButton setTitleColor:titleColor forState:UIControlStateNormal];
+    
+    
+    [self.rightButton sizeToFit];
+    self.rightButton.right = kWidth-10*scale_h;
+    self.rightButton.centerY = self.titleLable.centerY;
 }
 - (void)wr_setRightButtonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor {
     [self wr_setRightButtonWithNormal:image highlighted:image title:title titleColor:titleColor];
@@ -230,6 +248,8 @@
         [_rightButton addTarget:self action:@selector(clickRight) forControlEvents:UIControlEventTouchUpInside];
         _rightButton.imageView.contentMode = UIViewContentModeCenter;
         _rightButton.hidden = YES;
+        _rightButton.titleLabel.font = [UIFont systemFontOfSize:15*scale_h];
+        [_rightButton sizeToFit];
     }
     return _rightButton;
 }

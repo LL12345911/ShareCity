@@ -11,8 +11,13 @@
 #import "UITabBar+CustomBadge.h"
 #import "MarsTabBar.h"
 #import "BaseNavigationController.h"
-#import "PlaneController.h"
-#import "MineController.h"
+//#import "PlaneController.h"
+//#import "MineController.h"
+
+#import "DigitalAssetsController.h"
+#import "HomeController.h"
+#import "CountTaskController.h"
+
 
 @interface MainTabBarController ()<UITabBarControllerDelegate>
 
@@ -30,6 +35,9 @@
     [self setUpTabBar];
     //添加子控制器
     [self setUpAllChildViewController];
+    self.selectedIndex = 1;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,12 +60,26 @@
 -(void)setUpAllChildViewController{
     _VCS = @[].mutableCopy;
   
-    PlaneController *homeVC = [[PlaneController alloc]init];
-    [self setupChildViewController:homeVC title:@"纷享城市" imageName:@"main_tab_base_uncheck" seleceImageName:@"main_tab_base_check"];
 
-    MineController *makeFriendVC = [[MineController alloc]init];
-    [self setupChildViewController:makeFriendVC title:@"我的纷享城" imageName:@"main_tab_mine_uncheck" seleceImageName:@"main_tab_mine_check"];
+    
+//    PlaneController *homeVC = [[PlaneController alloc]init];
+//    [self setupChildViewController:homeVC title:@"纷享城市" imageName:@"11" seleceImageName:@"111"];
 
+    CountTaskController *task = [[CountTaskController alloc]init];
+    [self setupChildViewController:task title:@"算力任务" imageName:@"算力任务1" seleceImageName:@"算力任务"];
+    
+    HomeController *home = [[HomeController alloc]init];
+    [self setupChildViewController:home title:@"" imageName:@"11" seleceImageName:@"111"];
+
+    
+  
+    DigitalAssetsController *assets = [[DigitalAssetsController alloc]init];
+    [self setupChildViewController:assets title:@"数字资产" imageName:@"数字资产1" seleceImageName:@"数字资产"];
+
+    
+    
+    
+    
 
     self.viewControllers = _VCS;
 }
@@ -68,12 +90,19 @@
     controller.tabBarItem.image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     controller.tabBarItem.selectedImage = [[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //未选中字体颜色
-    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateNormal];
+    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kGrayColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateNormal];
     
     //选中字体颜色
-    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kOrangeColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateSelected];
+    [controller.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:kNavColor,NSFontAttributeName:[UIFont systemFontOfSize:12*scale_h]} forState:UIControlStateSelected];
     //包装导航控制器
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:controller];
+    
+    
+//    childController.tabBarItem.imageInsets = UIEdgeInsetsMake(2, 0, -2, 0);
+    
+    if ([controller isKindOfClass:[HomeController class]]) {
+        controller.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    }
     
     //    [self addChildViewController:nav];
     [_VCS addObject:nav];

@@ -78,7 +78,7 @@ _Pragma("clang diagnostic pop")
 #define CHINESE @"zh-Hans"
 #define ENGLISH @"en"
 #define AppLanguage @"appLanguage"
-#define LocalizedString(key) \
+#define GetString(key) \
 [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"appLanguage"]] ofType:@"lproj"]] localizedStringForKey:(key) value:@"" table:nil]
 
 #import "Api.h"

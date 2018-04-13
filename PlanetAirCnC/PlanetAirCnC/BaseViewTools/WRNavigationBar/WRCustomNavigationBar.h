@@ -33,13 +33,17 @@
 - (void)wr_setLeftButtonWithImage:(UIImage *)image;
 - (void)wr_setLeftButtonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor;
 
-//- (void)wr_setRightButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted title:(NSString *)title titleColor:(UIColor *)titleColor;
+- (void)wr_setRightButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted title:(NSString *)title titleColor:(UIColor *)titleColor;
 //- (void)wr_setRightButtonWithImage:(UIImage *)image title:(NSString *)title titleColor:(UIColor *)titleColor;
 - (void)wr_setRightButtonWithNormal:(UIImage *)normal highlighted:(UIImage *)highlighted;
 - (void)wr_setRightButtonWithImage:(UIImage *)image;
 - (void)wr_setRightButtonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor;
 
+//- (void)wr_setRightButtonframe;
 
+//- (void)wr_setRightButtonSEl:(SEL)action;
+//- (void)wr_setLeftButtonSEl:(SEL)action;
+//- (void)addTarget:(nullable id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 
 @end
 

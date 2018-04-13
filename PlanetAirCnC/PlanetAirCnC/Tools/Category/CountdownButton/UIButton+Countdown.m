@@ -14,11 +14,11 @@ static NSString *yasinTempText;
 
 @implementation UIButton (Countdown)
 
-- (void)startCountDownTime:(int)time withCountDownBlock:(void(^)(void))countDownBlock{
+- (void)startCountDownTime:(int)time textNormalColor:(UIColor *)normalColor  textColor:(UIColor *)color withCountDownBlock:(void(^)(void))countDownBlock{
     
     [self initButtonData];
     
-    [self startTime:time];
+    [self startTime:time textNormalColor:normalColor textColor:color];
     
     if (countDownBlock) {
         countDownBlock();
@@ -35,7 +35,7 @@ static NSString *yasinTempText;
     
 }
 
-- (void)startTime:(int)time{
+- (void)startTime:(int)time textNormalColor:(UIColor *)normalColor  textColor:(UIColor *)color{
     
     __block int timeout = time;
     
@@ -55,6 +55,7 @@ static NSString *yasinTempText;
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self setTitle:yasinTempText forState:UIControlStateNormal];
+                [self setTitleColor:normalColor forState:0];
                 self.userInteractionEnabled = YES;
                 
             });
@@ -65,6 +66,7 @@ static NSString *yasinTempText;
                 
                 NSString *text = [NSString stringWithFormat:@"%02d秒重新获取",timeout];
                 [self setTitle:text forState:UIControlStateNormal];
+                [self setTitleColor:color forState:0];
                 self.userInteractionEnabled = NO;
                 
             });

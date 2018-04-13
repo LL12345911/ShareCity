@@ -52,5 +52,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>纷享城将访问你的相机，用于扫描二维码</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>&quot;纷享城&quot;需要您的同意，才能添加照片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>纷享城将访问你的相册，用于扫描二维码</string>
 </dict>
 </plist>

@@ -25,5 +25,9 @@
 //设置状态栏 背景为 图片
 - (void)setStatusBarBackgroundImage:(UIImage *)image;
 
+- (void)startLoading;
+
+- (void)stopLoading;
+- (void)stopLoading:(float)time;
 
 @end

@@ -169,14 +169,18 @@
 
 #pragma mark - 原力值
 - (void)pushRecordForceController{
-    RecordForceController *view = [[RecordForceController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
+//    RecordForceController *view = [[RecordForceController alloc] init];
+//    [self.navigationController pushViewController:view animated:YES];
+    
+    [self logintOutMethodForButton];
 }
 
 #pragma mark - 黑钻记录
 - (void)pushDiamondsRecordController{
-    DiamondsRecordController *view = [[DiamondsRecordController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
+//    DiamondsRecordController *view = [[DiamondsRecordController alloc] init];
+//    [self.navigationController pushViewController:view animated:YES];
+    
+     [self logintOutMethodForButton];
 }
 #pragma mark - 重新刷新
 - (void)overloadingReloadData{
