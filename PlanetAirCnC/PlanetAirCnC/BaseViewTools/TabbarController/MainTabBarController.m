@@ -69,7 +69,7 @@
     [self setupChildViewController:task title:@"算力任务" imageName:@"算力任务1" seleceImageName:@"算力任务"];
     
     HomeController *home = [[HomeController alloc]init];
-    [self setupChildViewController:home title:@"" imageName:@"11" seleceImageName:@"111"];
+    [self setupChildViewController:home title:@"" imageName:@"home1" seleceImageName:@"home"];
 
     
   

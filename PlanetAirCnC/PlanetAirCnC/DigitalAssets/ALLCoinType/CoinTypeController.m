@@ -70,6 +70,9 @@
     } failure:^(NSError * _Nonnull error) {
         [self stopLoading:0];
         [HUDTools showText:@"网络出错" withView:self.view withDelay:1.5];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController popViewControllerAnimated:YES];
+        });
     }];
 }
 

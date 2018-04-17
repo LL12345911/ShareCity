@@ -1,10 +1,10 @@
-/* 
-  Local.strings
-  PlanetAirCnC
-
-  Created by Mars on 2018/4/8.
-  Copyright © 2018年 AirCnC车去车来. All rights reserved.
-*/
+/*
+ Local.strings
+ PlanetAirCnC
+ 
+ Created by Mars on 2018/4/8.
+ Copyright © 2018年 AirCnC车去车来. All rights reserved.
+ */
 //登录注册
 
 
@@ -54,8 +54,8 @@
 "login36" = "请输入新的登录密码";
 "login37" = "再次输入新的登录密码";
 "login38" = "重设交易密码";
-"login39" = "";
-"login41" = "";
+"login39" = "请输入新的6位数交易密码";
+"login41" = "再次输入新的交易密码";
 "login42" = "";
 "login43" = "";
 "login44" = "";
@@ -79,14 +79,16 @@
 "account08" = "地址簿";
 "account09" = "登录密码";
 "account10" = "交易密码";
-"account11" = "邮箱密码";
-"account12" = "你是纷享家的第";
+"account11" = "邮箱地址";
+"account12" = "你是纷享城的第";
 "account13" = "位居民";
 
 "account14" = "邮箱地址";
 "account15" = "邮箱";
 "account16" = "邮箱地址";
 "account17" = "更换邮箱地址";
+"account171" = "添加邮箱地址";
+
 "account18" = "请输入您的邮箱地址";
 "account19" = "下一步";
 "account20" = "输入验证码";
@@ -188,6 +190,7 @@
 //数字资产
 "digital01" = "数字资产";
 "digital02" = "添加币种";
+"digital022" = " 添加币种";
 "digital03" = "复制地址";
 "digital04" = "转出";
 "digital05" = "收款";
@@ -285,6 +288,5 @@
 "digital97" = "";
 "digital98" = "";
 "digital99" = "";
-
 
 

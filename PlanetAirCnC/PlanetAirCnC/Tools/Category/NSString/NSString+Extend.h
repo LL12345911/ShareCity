@@ -10,6 +10,17 @@
 
 @interface NSString (Extend)
 
+
+#pragma mark - 判断输入的字符串是否全为数字
+/**
+ 判断输入的字符串是否全为数字
+ @param checkedNumString 检测的字符串
+ @return yes 是全为数字  no 有其他字符
+ */
++ (BOOL)isNum:(NSString *)checkedNumString;
+
+
+
 /**
  判断字符串是否为空字符的方法
  

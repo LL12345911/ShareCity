@@ -149,11 +149,11 @@
         return;
     }
     [self startLoading];
-    [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
-        NSLog(@"开始倒计时");
-        //此处发送验证码等操作
-        //................
-    }];
+//    [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
+//        NSLog(@"开始倒计时");
+//        //此处发送验证码等操作
+//        //................
+//    }];
     //   type有：1注册短信验证码  2 修改密码短信验证码  3 登录验证码  4交易密码验证码
     NSString* phone = [NSString stringWithFormat:@"%@%@",_mobileArea,_phoneText.text];
     NSDictionary *paramter = @{@"mobileno" : phone,  //电话号码
@@ -165,9 +165,15 @@
         DebugLog(@"%@",responseDic);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseDic];
         NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
-        [self stopLoading:0.5];
+        [self stopLoading:0];
         if ([code isEqualToString:@"0"]) {
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
+            [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
+                NSLog(@"开始倒计时");
+                //此处发送验证码等操作
+                //................
+            }];
+            
         }else{
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
         }
@@ -255,8 +261,8 @@
         _payText.borderStyle = UITextBorderStyleNone;
         _payText.placeholder = GetString(@"login36");
         _payText.font = [UIFont systemFontOfSize:15*scale_h];
-        //    _payText.keyboardType = UIKeyboardTypeNumberPad;
-         _payText.secureTextEntry = YES;
+        _payText.keyboardType = UIKeyboardTypeASCIICapable;
+        _payText.secureTextEntry = YES;
     }
     return _payText;
 }
@@ -275,8 +281,8 @@
         _pay2Text.borderStyle = UITextBorderStyleNone;
         _pay2Text.placeholder = GetString(@"login37");
         _pay2Text.font = [UIFont systemFontOfSize:15*scale_h];
-         _pay2Text.secureTextEntry = YES;
-        //    _pay2Text.keyboardType = UIKeyboardTypeNumberPad;
+        _pay2Text.secureTextEntry = YES;
+        _pay2Text.keyboardType = UIKeyboardTypeASCIICapable;
     }
     return _pay2Text;
 }

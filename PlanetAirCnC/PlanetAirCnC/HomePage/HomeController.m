@@ -101,19 +101,19 @@
             [weakSelf.tableview.headRefreshControl endRefreshing];
         });
     }];
-    
-    
     //    [self.tableview.headRefreshControl beginRefreshing];
     
     self.showIndicatorView = NO;
     
     
-        for (int i=0; i<100; i++) {
-            printf("\"digital%02d\" = \"\";\n",i);
-        }
-    
-    
+    for (int i=0; i<100; i++) {
+        printf("\"digital%02d\" = \"\";\n",i);
+    }
 }
+
+
+
+
 #pragma mark - 我的收入
 - (void)billingRecordsMethod{
     DebugLog(@"我的收入 +++++++++ ");
@@ -225,6 +225,7 @@
     [_calculateBtn setAttributedTitle:[self setAttributedTotal:@"78" withbasePow:@"57" plusPow:@"45"] forState:0];
 }
 
+#pragma mark - 收取 代理
 - (void)energyViewClickButton:(NSInteger)tag{
     
     UIButton *button = _energyView.viewArr[tag];
@@ -267,12 +268,19 @@
 
 #pragma mark - 产生音乐
 -(void)gameMusic{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"shake_match.wav" ofType:@""];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    self.audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
-    self.audioPlayer.volume = 1;
+    if (self.audioPlayer.isPlaying) {
+        [self.audioPlayer stop];
+    }
+    
+    if (!_audioPlayer) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"shake_match.wav" ofType:@""];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        self.audioPlayer = [[AVAudioPlayer alloc]initWithData:data error:nil];
+        self.audioPlayer.volume = 1;
+        [self.audioPlayer setNumberOfLoops:1000000];
+    }
+    
     [self.audioPlayer play];
-    [self.audioPlayer setNumberOfLoops:1000000];
 }
 
 #pragma mark - UITableView 代理和数据源方法
@@ -381,6 +389,7 @@
         [_moreBtn setTitleColor:kGrayColor forState:0];
         _moreBtn.titleLabel.font = [UIFont systemFontOfSize:15*scale_h];
         _moreBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [_moreBtn setColor:kGrayColor];
         //[_moreBtn addTarget:self action:@selector(copyMethodForButton) forControlEvents:UIControlEventTouchUpInside];
     }
     return _moreBtn;
@@ -404,7 +413,7 @@
         _introduceBtn.titleLabel.numberOfLines = 0;
         [_introduceBtn setTitleColor:[UIColor whiteColor] forState:0];
         _introduceBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        _introduceBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
+        //_introduceBtn.titleLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _introduceBtn;
 }
@@ -535,10 +544,8 @@
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:subTitle preferredStyle:UIAlertControllerStyleAlert];
     // UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"忽略此版本" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *sure = [UIAlertAction actionWithTitle:@"立即升级" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        float version =  [[[UIDevice currentDevice] systemVersion] floatValue];
-        
-        if (version >= 10 ) {
+//        float version =  [[[UIDevice currentDevice] systemVersion] floatValue];
+         if (@available(iOS 10.0, *)) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:openUrl] options:@{} completionHandler:^(BOOL success) {
             }];
         }else{

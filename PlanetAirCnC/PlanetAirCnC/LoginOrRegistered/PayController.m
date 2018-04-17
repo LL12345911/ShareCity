@@ -58,7 +58,6 @@
     [self setView];
     
 }
-
 #pragma mark - 选择地区
 - (void)selectPhoneAreas{
     AreasController *areas = [[AreasController alloc] init];
@@ -118,32 +117,30 @@
         return;
     }
     [self startLoading];
-    [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
-        NSLog(@"开始倒计时");
-        //此处发送验证码等操作
-        //................
-    }];
     //   type有：1注册短信验证码  2 修改密码短信验证码  3 登录验证码  4交易密码验证码
     NSString* phone = [NSString stringWithFormat:@"%@%@",_phoneStr,_phoneText.text];
     NSDictionary *paramter = @{@"mobileno" : phone,  //电话号码
                                @"type" : @"4", //4交易密码验证码
                                };
-    
     DebugLog(@"%@\n%@",paramter,Api_mobilecode);
     [MHHttpTool POST:Api_mobilecode parameters:paramter success:^(NSDictionary * _Nullable responseDic) {
         DebugLog(@"%@",responseDic);
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseDic];
-//        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
-        
-        [self stopLoading];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
+        [self stopLoading:0];
+        if ([code isEqualToString:@"0"]) {
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
+            [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
+                NSLog(@"开始倒计时");
+                //此处发送验证码等操作
+            }];
             
-        });
+        }else{
+            [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
+        }
 
-        
     } failure:^(NSError * _Nonnull error) {
-        
+        [self stopLoading:0];
         [HUDTools showText:@"网络出错" withView:self.view withDelay:1.5];
     }];
 }
@@ -192,6 +189,13 @@
         [HUDTools showText:@"密码不一致,请检查两次密码是否一致" withView:self.view withDelay:2];
         return;
     }
+    
+    if (![NSString isNum:_payText.text]) {
+        [HUDTools showText:@"请检查两次密码是否全为数字" withView:self.view withDelay:2];
+        return;
+    }
+    
+    
     [self startLoading];
     //
     NSString *type = @"3";
@@ -227,7 +231,7 @@
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
         }
     } failure:^(NSError * _Nonnull error) {
-        
+        [self stopLoading:0];
         [HUDTools showText:@"网络出错" withView:self.view withDelay:1.5];
     }];
 }
@@ -237,12 +241,11 @@
 - (void) setTransactionPasswordSecussful{
     //默认 从注册页面进入 设置交易密码  2 重设交易密码  3 登录成功后 未设置交易密码 设置
     if ([_typeStr isEqualToString:@"2"]) {
-        
         [self.navigationController popViewControllerAnimated:YES];
         
     }else  if ([_typeStr isEqualToString:@"3"]) {
         [self goToMainViewController];
-       // [self.navigationController popViewControllerAnimated:YES];
+
     }else{
         
         NSArray *temArray = self.navigationController.viewControllers;
@@ -252,8 +255,6 @@
                 [self.navigationController popToViewController:temVC animated:YES];
             }
         }
-        
-        //[self goToMainViewController];
     }
 }
 
@@ -263,7 +264,6 @@
  */
 #pragma mark - 进入主界面 切换跟视图
 - (void)goToMainViewController{
-    
     MainTabBarController *mainVC = [[MainTabBarController alloc] init];
     [UIApplication sharedApplication].keyWindow.rootViewController = mainVC;
 }
@@ -333,6 +333,7 @@
         _payText.font = [UIFont systemFontOfSize:15*scale_h];
         _payText.keyboardType = UIKeyboardTypeNumberPad;
          _payText.secureTextEntry = YES;
+        _payText.keyboardType = UIKeyboardTypeASCIICapable;
         
     }
     return _payText;
@@ -355,6 +356,7 @@
         _pay2Text.font = [UIFont systemFontOfSize:15*scale_h];
         _pay2Text.keyboardType = UIKeyboardTypeNumberPad;
         _pay2Text.secureTextEntry = YES;
+        _pay2Text.keyboardType = UIKeyboardTypeASCIICapable;
         
     }
     return _pay2Text;

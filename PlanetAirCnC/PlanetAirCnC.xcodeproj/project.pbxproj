@@ -91,7 +91,6 @@
 		41705961207DD1FC00533D6B /* PayPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41705960207DD1FC00533D6B /* PayPopupView.m */; };
 		41705965207DEF5E00533D6B /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41705964207DEF5E00533D6B /* PopView.m */; };
 		41705968207DF4D900533D6B /* PopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41705967207DF4D900533D6B /* PopViewCell.m */; };
-		4170596B207E0C6D00533D6B /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4170596A207E0C6D00533D6B /* LoadingView.m */; };
 		4189D23E20411414000F533D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D23D20411414000F533D /* AppDelegate.m */; };
 		4189D24120411414000F533D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D24020411414000F533D /* ViewController.m */; };
 		4189D24420411414000F533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4189D24220411414000F533D /* Main.storyboard */; };
@@ -100,6 +99,8 @@
 		4189D24C20411414000F533D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D24B20411414000F533D /* main.m */; };
 		4189D25620411414000F533D /* PlanetAirCnCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D25520411414000F533D /* PlanetAirCnCTests.m */; };
 		4189D26120411414000F533D /* PlanetAirCnCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189D26020411414000F533D /* PlanetAirCnCUITests.m */; };
+		41904301208599960080F0A2 /* UIColor+ArtsyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 419042FD208599950080F0A2 /* UIColor+ArtsyColors.m */; };
+		41904302208599960080F0A2 /* UIColor+DebugColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 41904300208599950080F0A2 /* UIColor+DebugColours.m */; };
 		41A762262080474B00557F5A /* AreasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A762242080474B00557F5A /* AreasController.m */; };
 		41A762292080476C00557F5A /* AreaMobileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A762282080476C00557F5A /* AreaMobileModel.m */; };
 		41A7622C208049C700557F5A /* AreasMobileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A7622B208049C700557F5A /* AreasMobileCell.m */; };
@@ -353,8 +354,6 @@
 		41705964207DEF5E00533D6B /* PopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
 		41705966207DF4D900533D6B /* PopViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopViewCell.h; sourceTree = "<group>"; };
 		41705967207DF4D900533D6B /* PopViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopViewCell.m; sourceTree = "<group>"; };
-		41705969207E0C6D00533D6B /* LoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
-		4170596A207E0C6D00533D6B /* LoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		4189D23920411413000F533D /* PlanetAirCnC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetAirCnC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4189D23C20411414000F533D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4189D23D20411414000F533D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -371,6 +370,10 @@
 		4189D25C20411414000F533D /* PlanetAirCnCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetAirCnCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4189D26020411414000F533D /* PlanetAirCnCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanetAirCnCUITests.m; sourceTree = "<group>"; };
 		4189D26220411414000F533D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		419042FD208599950080F0A2 /* UIColor+ArtsyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ArtsyColors.m"; sourceTree = "<group>"; };
+		419042FE208599950080F0A2 /* UIColor+DebugColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DebugColours.h"; sourceTree = "<group>"; };
+		419042FF208599950080F0A2 /* UIColor+ArtsyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ArtsyColors.h"; sourceTree = "<group>"; };
+		41904300208599950080F0A2 /* UIColor+DebugColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DebugColours.m"; sourceTree = "<group>"; };
 		41A762242080474B00557F5A /* AreasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreasController.m; sourceTree = "<group>"; };
 		41A762252080474B00557F5A /* AreasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreasController.h; sourceTree = "<group>"; };
 		41A762272080476C00557F5A /* AreaMobileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaMobileModel.h; sourceTree = "<group>"; };
@@ -581,8 +584,6 @@
 				41029A63207B17B300544F5A /* HomeController.m */,
 				41029A68207B396A00544F5A /* HomePageCell.h */,
 				41029A69207B396A00544F5A /* HomePageCell.m */,
-				41705969207E0C6D00533D6B /* LoadingView.h */,
-				4170596A207E0C6D00533D6B /* LoadingView.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -1157,6 +1158,17 @@
 			path = PlanetAirCnCUITests;
 			sourceTree = "<group>";
 		};
+		419042FC208599950080F0A2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				419042FF208599950080F0A2 /* UIColor+ArtsyColors.h */,
+				419042FD208599950080F0A2 /* UIColor+ArtsyColors.m */,
+				419042FE208599950080F0A2 /* UIColor+DebugColours.h */,
+				41904300208599950080F0A2 /* UIColor+DebugColours.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		41A7623020805D6D00557F5A /* ALLCoinType */ = {
 			isa = PBXGroup;
 			children = (
@@ -1306,8 +1318,9 @@
 		41EE46132074975A0039E782 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				41EE46142074975A0039E782 /* UIColor+Hex.m */,
+				419042FC208599950080F0A2 /* Classes */,
 				41EE46152074975A0039E782 /* UIColor+Hex.h */,
+				41EE46142074975A0039E782 /* UIColor+Hex.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -1326,10 +1339,10 @@
 		41EE461B2074975A0039E782 /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				41EE461C2074975A0039E782 /* NSString+VerifyPhoneNumber.m */,
 				41EE461D2074975A0039E782 /* NSString+Extend.h */,
-				41EE461E2074975A0039E782 /* NSString+VerifyPhoneNumber.h */,
 				41EE461F2074975A0039E782 /* NSString+Extend.m */,
+				41EE461E2074975A0039E782 /* NSString+VerifyPhoneNumber.h */,
+				41EE461C2074975A0039E782 /* NSString+VerifyPhoneNumber.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -1764,6 +1777,7 @@
 				41705968207DF4D900533D6B /* PopViewCell.m in Sources */,
 				41029AAE207C66A800544F5A /* EnjoyDrilDisputeController.m in Sources */,
 				41029A88207C494900544F5A /* EmailAddController.m in Sources */,
+				41904302208599960080F0A2 /* UIColor+DebugColours.m in Sources */,
 				4164A1B420412B4700186B00 /* KafkaRefreshDefaults.m in Sources */,
 				4164A1A320412B4700186B00 /* KafkaRefreshControl.m in Sources */,
 				41029AC6207C8BC300544F5A /* UIImage+QRcode.m in Sources */,
@@ -1782,7 +1796,6 @@
 				4164A1BC20412B4700186B00 /* MarsTabBar.m in Sources */,
 				41C3D807207F67E000B02447 /* SelectCoinTypeCell.m in Sources */,
 				41B851FD204788D700052DF7 /* RecordForceController.m in Sources */,
-				4170596B207E0C6D00533D6B /* LoadingView.m in Sources */,
 				4164A1A420412B4700186B00 /* KafkaFootRefreshControl.m in Sources */,
 				41029AC5207C8BC300544F5A /* MarsButton.m in Sources */,
 				41029A85207B782B00544F5A /* EmailsController.m in Sources */,
@@ -1802,6 +1815,7 @@
 				41705954207DB54B00533D6B /* MMScanViewController.m in Sources */,
 				4164A1CB20412C1A00186B00 /* MineController.m in Sources */,
 				41B851CD204546FC00052DF7 /* SettingController.m in Sources */,
+				41904301208599960080F0A2 /* UIColor+ArtsyColors.m in Sources */,
 				4164A1A220412B4700186B00 /* KafkaHeadRefreshControl.m in Sources */,
 				41029A9E207C5F0200544F5A /* MyIncomeController.m in Sources */,
 				41EE46B02074CA0F0039E782 /* Addition.m in Sources */,
@@ -2007,6 +2021,7 @@
 			baseConfigurationReference = D780A217E1AF42911CF00417 /* Pods-PlanetAirCnC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = PlanetAirCnC/PlanetAirCnC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UKVCX749CW;
@@ -2016,7 +2031,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetAirCnC.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2025,6 +2040,7 @@
 			baseConfigurationReference = CA6285AEA4F29EDFC377B588 /* Pods-PlanetAirCnC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = PlanetAirCnC/PlanetAirCnC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UKVCX749CW;
@@ -2034,7 +2050,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.PlanetAirCnC.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

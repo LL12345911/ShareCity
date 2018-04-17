@@ -13,13 +13,6 @@
 #import <UserNotifications/UserNotifications.h>
 #import "BaseNavigationController.h"
 
-#define kNotificationCategoryIdentifile @"kNotificationCategoryIdentifile"
-#define kNotificationActionIdentifileStar @"kNotificationActionIdentifileStar"
-#define kNotificationActionIdentifileComment @"kNotificationActionIdentifileComment"
-#define kLocalNotificationKey @"kLocalNotificationKey"
-
-
-
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
 @end
@@ -32,19 +25,12 @@
     //[NSThread sleepForTimeInterval:3.0]; //设置启动页面时间,系统默认1秒
     //记录应用打开次数
     [Helper recordAppOpenTimes];
-    // AppDelegate 进行全局设置
     if (@available(iOS 11.0, *)){
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     }
-    /**
-     IQKeyboardManager
-     */
-    IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
-    keyboardManager.enable = YES; // 控制整个功能是否启用
-    keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
-    keyboardManager.shouldToolbarUsesTextFieldTintColor = YES; // 控制键盘上的工具条文字颜色是否用户自定义
-    keyboardManager.toolbarManageBehaviour = IQAutoToolbarBySubviews; // 有多个输入框时,通过点击“前一个”“后一个”按钮来实现移动到不同的输入框
-    keyboardManager.enableAutoToolbar = YES; // 控制是否显示键盘上的工具条
+    [self keyboardManager];
+    //选择本地语言
+    [self choseLanguage];
     
 //[Helper setValue:@"" forkey:USER_Token];
     
@@ -60,114 +46,14 @@
         self.window.rootViewController = nav;
     }
     
-    //判断是否是第一次启动
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
-        //设置本地语言
-        if ([self isChineseLanguage]) {
-            NSString *languageStr = @"zh-Hans";
-            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
-        }else{
-            NSString *languageStr = @"en";
-            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
-        }
-    }
-
-    
     //ios自带推送
     [self registerRemoteNotification];
-    [self registLocationNotification];
-    
-//    [self choiseLocation];
-  
+//    [self registLocationNotification];
     [self.window makeKeyAndVisible];
-//    self.window.windowLevel = UIWindowLevelAlert;
-
-    
     return YES;
 }
 
 
-
-
-#pragma mark注册本地通知
--(void)registLocationNotification
-{
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0){
-        // 使用 UNUserNotificationCenter 来管理通知
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        //监听回调事件
-        center.delegate = self;
-
-        //iOS 10 使用以下方法注册，才能得到授权
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
-                              completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                                  // Enable or disable features based on authorization.
-                              }];
-        //获取当前的通知设置，UNNotificationSettings 是只读对象，不能直接修改，只能通过以下方法获取
-        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {}];
-        
-    }else if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0&&[[UIDevice currentDevice].systemVersion floatValue] < 10.0){
-        if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
-            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        }
-    }
-}
-
-
-- (void)choiseLocation{
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
-        [self sendiOS10LocalNotification];
-    } else {
-        [self sendiOS8LocalNotification];
-    }
-}
-
-
-
-- (void)sendiOS10LocalNotification
-{
-    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
-    content.body = @"Body:夏目友人帐";
-    content.badge = @(1);
-    content.title = @"Title:夏目·贵志";
-    content.subtitle = @"SubTitle:三三";
-    content.categoryIdentifier = kNotificationCategoryIdentifile;
-    content.userInfo = @{kLocalNotificationKey: @"iOS10推送"};
-    //    content.launchImageName = @"xiamu";
-    //推送附件
-//    NSString *path = @"";//[[NSBundle mainBundle] pathForResource:@"0" ofType:@"mp4"];
-//    NSError *error = nil;
-//    UNNotificationAttachment *attachment =  [UNNotificationAttachment attachmentWithIdentifier:@"AttachmentIdentifile" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
-//    content.attachments = @[attachment];
-    
-    //推送类型
-    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:3 repeats:NO];
-    
-    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"Test" content:content trigger:trigger];
-    [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
-        NSLog(@"iOS 10 发送推送， error：%@", error);
-    }];
-}
-
-- (void)sendiOS8LocalNotification
-{
-    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    //触发通知时间
-    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    //重复间隔
-    //    localNotification.repeatInterval = kCFCalendarUnitMinute;
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    //通知内容
-    localNotification.alertBody = @"i am a test local notification";
-    localNotification.applicationIconBadgeNumber = 1;
-    localNotification.soundName = UILocalNotificationDefaultSoundName;
-    //通知参数
-    localNotification.userInfo = @{kLocalNotificationKey: @"iOS8推送"};
-    localNotification.category = kNotificationCategoryIdentifile;
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-}
 
 
 #pragma mark - 用户通知(推送) _自定义方法
@@ -178,7 +64,20 @@
      以下为演示代码，注意根据实际需要修改，注意测试支持的iOS系统都能获取到DeviceToken
      */
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
-//#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0 // Xcode 8编译会调用
+        [self registeriOS10LaterRemoteNotification];
+        
+    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+}
+#pragma mark - iOS 10 以上 注册 验车通知
+- (void)registeriOS10LaterRemoteNotification{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0 // Xcode 8编译会调用
+    if (@available(iOS 10.0, *)) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         center.delegate = self;
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionCarPlay) completionHandler:^(BOOL granted, NSError *_Nullable error) {
@@ -187,31 +86,18 @@
             }
         }];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
-//#else // Xcode 7编译会调用
-//        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
-//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-//        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-//        [[UIApplication sharedApplication] registerForRemoteNotifications];
-//#endif
-    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        
-        
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    } else {
-        UIRemoteNotificationType apn_type = (UIRemoteNotificationType)(UIRemoteNotificationTypeAlert |
-                                                                       UIRemoteNotificationTypeSound |
-                                                                       UIRemoteNotificationTypeBadge);
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:apn_type];
     }
+#else // Xcode 7编译会调用
+    UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+#endif
 }
 
 
 
 #pragma mark - 远程通知(推送)回调
-
 /** 远程通知注册成功委托 */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
@@ -239,30 +125,20 @@
 //    [GeTuiSdk setBadge:[UIApplication sharedApplication].applicationIconBadgeNumber+1];
     // 控制台打印接收APNs信息
     NSLog(@"\n>>>[Receive RemoteNotification]:%@\n\n", userInfo);
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+
+        [self sendBeforeiOS10LocalNotification:userInfo];
+        }
+    
     
     completionHandler(UIBackgroundFetchResultNewData);
     
+  
+    
+}
+#pragma mark - iOS 10以下版本本地通知
+- (void)sendBeforeiOS10LocalNotification:(NSDictionary *)userInfo{
     NSDictionary *infoDic = [NSDictionary dictionaryWithDictionary:userInfo[@"aps"]];//aps
-    
-//    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
-//        [self sendiOS10LocalNotification];
-//    } else {
-////        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-////        //触发通知时间
-////        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-////        //重复间隔
-////        //    localNotification.repeatInterval = kCFCalendarUnitMinute;
-////        localNotification.timeZone = [NSTimeZone defaultTimeZone];
-////        //通知内容
-////        localNotification.alertBody = infoDic[@"alert"];
-////        localNotification.applicationIconBadgeNumber = 1;
-////        localNotification.soundName = UILocalNotificationDefaultSoundName;
-////        //通知参数
-////        localNotification.userInfo = @{kLocalNotificationKey: @"iOS8推送"};
-////        localNotification.category = kNotificationCategoryIdentifile;
-////        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    }
-    
     
     //定义本地通知对象
     UILocalNotification *notification = [[UILocalNotification alloc] init];
@@ -274,60 +150,57 @@
     
     //设置通知属性
     notification.alertBody = infoDic[@"alert"];;//[NSString stringWithFormat:@"Agent-%d",arc4random()%100]; //通知主体
-//    notification.applicationIconBadgeNumber += 1;//应用程序图标右上角显示的消息数
-//    notification.alertAction = @"打开应用"; //待机界面的滑动动作提示
+        notification.applicationIconBadgeNumber += 1;//应用程序图标右上角显示的消息数
+        notification.alertAction = @"打开应用"; //待机界面的滑动动作提示
     notification.alertLaunchImage = @"Default";//通过点击通知打开应用时的启动图片,这里使用程序启动图片
     notification.soundName = UILocalNotificationDefaultSoundName;//收到通知时播放的声音，默认消息声音
-    //    notification.soundName=@"msg.caf";//通知声音（需要真机才能听到声音）
+        notification.soundName=@"msg.caf";//通知声音（需要真机才能听到声音）
     
-    //设置用户信息
-//    notification.userInfo = userInfo;//@{@"id": @1, @"user": @"cloudox"};//绑定到通知上的其他附加信息
-//    notification.alertBody = infoDic[@"alert"];
-    //调用通知
+//    设置用户信息
+        notification.userInfo = userInfo;//@{@"id": @1, @"user": @"cloudox"};//绑定到通知上的其他附加信息
+        notification.alertBody = infoDic[@"alert"];
+//    调用通知
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    
 }
-
 
 
 
 #pragma mark - iOS 10中收到推送消息
 //#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 #pragma mark - iOS 10: App在前台获取到通知 接收到通知的事件
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler  API_AVAILABLE(ios(10.0)){
     
-    NSLog(@"willPresentNotification：%@", notification.request.content.userInfo);
-    
-    //这个和下面的userNotificationCenter:didReceiveNotificationResponse withCompletionHandler: 处理方法一样
-    NSDictionary *userInfo = notification.request.content.userInfo;
-    //收到推送的请求
-    UNNotificationRequest *request = notification.request;
-    //收到推送的内容
-    UNNotificationContent *content = request.content;
-    NSNumber *badge = content.badge;
-    NSString *body = content.body;
-    NSString *title = content.title;
-    NSString *subTitle = content.subtitle;
-    UNNotificationSound *sound =  [UNNotificationSound defaultSound];//content.sound;
-    
-    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
-        
-        
-    } else {
-        // 判断为本地通知
-        NSLog(@"iOS10 应用在前台收到本地通知:{\\\\nbody:%@，\\\\ntitle:%@,\\\\nsubtitle:%@,\\\\nbadge：%@，\\\\nsound：%@，\\\\nuserInfo：%@\\\\n}", body, title, subTitle, badge, sound, userInfo);
-    }
+//    NSLog(@"willPresentNotification：%@", notification.request.content.userInfo);
+//
+//    //这个和下面的userNotificationCenter:didReceiveNotificationResponse withCompletionHandler: 处理方法一样
+//    NSDictionary *userInfo = notification.request.content.userInfo;
+//
+//    //收到推送的请求
+//    UNNotificationRequest *request = notification.request;
+//    //收到推送的内容
+//    UNNotificationContent *content = request.content;
+//    NSNumber *badge = content.badge;
+//    NSString *body = content.body;
+//    NSString *title = content.title;
+//    NSString *subTitle = content.subtitle;
+//    UNNotificationSound *sound =  [UNNotificationSound defaultSound];//content.sound;
+//
+//    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+//        NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
+//    } else {
+//        // 判断为本地通知
+//        NSLog(@"iOS10 应用在前台收到本地通知:{\\\\nbody:%@，\\\\ntitle:%@,\\\\nsubtitle:%@,\\\\nbadge：%@，\\\\nsound：%@，\\\\nuserInfo：%@\\\\n}", body, title, subTitle, badge, sound, userInfo);
+//    }
     completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
     
 }
-
+//应用在后台，但是还活着
 //收到远程推送打开app时做的跳转页面###
 #pragma mark - iOS 10: 点击通知进入App时触发 通知的点击事件
--(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(ios(10.0)){
     
-    NSDictionary *userInfo = [NSDictionary dictionaryWithDictionary:response.notification.request.content.userInfo];
-    NSLog(@"didReceiveNotification：%@", response.notification.request.content.userInfo);
+//    NSDictionary *userInfo = [NSDictionary dictionaryWithDictionary:response.notification.request.content.userInfo];
+//    NSLog(@"didReceiveNotification：%@", response.notification.request.content.userInfo);
     //    //跳转页面
     //    DetailContentVC *detailVC=[DetailContentVC new];
     //    detailVC.titleValue=_webTitle;
@@ -344,20 +217,45 @@
 
 
 
+#pragma mark - 选择本地语言
+- (void)choseLanguage{
+    //判断是否是第一次启动
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstStart"]){
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
+        //设置本地语言
+        if ([self isChineseLanguage]) {
+            NSString *languageStr = @"zh-Hans";
+            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
+        }else{
+            NSString *languageStr = @"en";
+            [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:AppLanguage];
+        }
+    }
+}
 
-
+#pragma mark - 键盘工具
+- (void)keyboardManager{
+    /**
+     IQKeyboardManager
+     */
+    IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
+    keyboardManager.enable = YES; // 控制整个功能是否启用
+    keyboardManager.shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
+    keyboardManager.shouldToolbarUsesTextFieldTintColor = YES; // 控制键盘上的工具条文字颜色是否用户自定义
+    keyboardManager.toolbarManageBehaviour = IQAutoToolbarBySubviews; // 有多个输入框时,通过点击“前一个”“后一个”按钮来实现移动到不同的输入框
+    keyboardManager.enableAutoToolbar = YES; // 控制是否显示键盘上的工具条
+    
+}
 
 #pragma mark --- 获取系统语言
-- (NSString *)getCurrentLanguage
-{
+- (NSString *)getCurrentLanguage{
     NSArray *languages = [NSLocale preferredLanguages];
     NSString *currentLanguage = [languages objectAtIndex:0];
     return currentLanguage;
 }
 
 #pragma mark --- 判断当前系统语言为中文
-- (BOOL)isChineseLanguage
-{
+- (BOOL)isChineseLanguage{
     BOOL isChinese = NO;
     if ([[self getCurrentLanguage] rangeOfString:@"zh-Hans"].length > 0) {
         isChinese = YES;
@@ -368,8 +266,61 @@
 
 
 
+#pragma mark - 注册本地通知
+-(void)registLocationNotification{
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0){
+        
+        if (@available(iOS 10.0, *)) {
+            // 使用 UNUserNotificationCenter 来管理通知
+            UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+            //监听回调事件
+            center.delegate = self;
+            
+            //iOS 10 使用以下方法注册，才能得到授权
+            [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+                                  completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                      // Enable or disable features based on authorization.
+                                  }];
+            //获取当前的通知设置，UNNotificationSettings 是只读对象，不能直接修改，只能通过以下方法获取
+            [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {}];
+            
+        }
+        
+    }else if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0&&[[UIDevice currentDevice].systemVersion floatValue] < 10.0){
+        //项的，也就是说如果从来没有发送过请求，即使通过设置也打不开消息允许设置)
+        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types == UIUserNotificationTypeNone) {
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        }
+        
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        }
+    }
+}
 
 
+/**
+ iOS 10以后的本地通知
+ */
+- (void)addlocalNotificationForNewVersion {
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+        content.title = [NSString localizedUserNotificationStringForKey:@"Hello" arguments:nil];
+        content.body = [NSString localizedUserNotificationStringForKey:[NSString stringWithFormat:@"Agent-%d",arc4random()%100] arguments:nil];
+        content.sound = [UNNotificationSound defaultSound];
+        
+        //    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:alertTime repeats:NO];
+        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"OXNotification" content:content trigger:nil];
+        
+        [center addNotificationRequest:request withCompletionHandler:^(NSError *_Nullable error) {
+            NSLog(@"成功添加推送");
+        }];
+    }
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -38,7 +38,8 @@
     manager.requestSerializer.timeoutInterval = 20.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutinterval"];
     
-    NSURLSessionDataTask *dataTask = [manager POST:[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+    //[URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+    NSURLSessionDataTask *dataTask = [manager POST:[URLString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (success) {

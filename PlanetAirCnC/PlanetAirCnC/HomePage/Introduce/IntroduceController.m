@@ -51,8 +51,6 @@
     [_tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     
     [self setHeadView];
-    
-    
    [self setFootView];
   
 }
@@ -111,7 +109,7 @@
     _assets.titleLabel.font = [UIFont systemFontOfSize:17*scale_h];
     _assets.titleLabel.adjustsFontSizeToFitWidth = YES;
     [_assets setTitleColor:kBlackColor forState:0];
-    [_assets setImage:[UIImage imageNamed:@"111"] forState:0];
+    [_assets setImage:[UIImage imageNamed:@"home"] forState:0];
     //[_assets addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     [_backview addSubview:self.assets];
     

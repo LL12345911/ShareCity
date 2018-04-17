@@ -6,6 +6,8 @@
 //  Copyright © 2018年 AirCnC车去车来. All rights reserved.
 //
 
+//账单记录
+
 #import "BillingRecordsController.h"
 #import "BillingRecordsCell.h"
 
@@ -23,39 +25,27 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.customNavBar.title = GetString(@"account40");
     
-
-    
     [self.view addSubview:self.tableview];
     [_tableview registerClass:[BillingRecordsCell class] forCellReuseIdentifier:NSStringFromClass([BillingRecordsCell class])];
-    
 }
-
-
 
 #pragma mark - UITableView 代理和数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
-    
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 80*scale_h;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     BillingRecordsCell *recodeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([BillingRecordsCell class]) forIndexPath:indexPath];
-    //    [rankCell setValueModel:@"" indexPathRow:indexPath.row];
     recodeCell.selectionStyle = UITableViewCellSelectionStyleNone;
     //    assetsCell.delegate = self;
-    //    rankCell.textLabel.text = [NSString stringWithFormat:@"index %ld",indexPath.row];
     return recodeCell;
-    
 }
 
 

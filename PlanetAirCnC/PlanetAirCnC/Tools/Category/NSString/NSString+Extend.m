@@ -13,6 +13,19 @@
 @implementation NSString (Extend)
 
 /**
+    判断输入的字符串是否全为数字
+ @param checkedNumString 检测的字符串
+ @return yes 是全为数字  no 有其他字符
+ */
++ (BOOL)isNum:(NSString *)checkedNumString {
+    checkedNumString = [checkedNumString stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    if(checkedNumString.length > 0) {
+        return NO;
+    }
+    return YES;
+}
+
+/**
  判断字符串是否为空字符的方法
 
  @param string 判断的字符串
@@ -53,7 +66,9 @@
 }
 
 + (NSString *)NSUTF8StringEncodingNSUrl:(NSString *)image_pic{
-    NSString *imageDataStr3 = [image_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    NSString *imageDataStr3 = [image_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *imageDataStr3 = [image_pic stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+
     return imageDataStr3;
 }
 

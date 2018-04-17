@@ -11,16 +11,10 @@
 
 @interface BillingRecordsCell()
 
-//@property (nonatomic, strong) UIView *back;
 @property (nonatomic,strong) UIImageView *coinImage; //是否添加
 @property (nonatomic,strong) UILabel *coinName;   //
-
 @property (nonatomic,strong) UILabel *coinNum;   //
-
 @property (nonatomic, strong) UIView *line;
-
-//@property (nonatomic,strong) UILabel *coinDesc; //
-
 
 @end
 
@@ -39,8 +33,6 @@
 
 
 - (void)layoutReloadViewFrame{
-    
-    
     //
     _coinImage = [[UIImageView alloc] initWithFrame:CGRectMake(20*scale_h, 15*scale_h, 50*scale_h, 50*scale_h)];
     _coinImage.layer.cornerRadius = 15*scale_h;
@@ -52,7 +44,6 @@
     _coinName.numberOfLines = 0;
     [self.contentView addSubview:_coinName];
     
-    
     _coinNum = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kWidth-20*scale_h, 80*scale_h)];
     _coinNum.numberOfLines = 0;
     _coinNum.textColor = kOrangeRed;
@@ -62,9 +53,6 @@
     _line = [[UIView alloc] initWithFrame:CGRectMake(0, 80*scale_h-1, kWidth, 1)];
     _line.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.contentView addSubview:_line];
-   
-   
-    
     
     _coinName.attributedText = [self setAttributed:@"挖矿" coinType:@"比特币" time:@"2018-09-10 12:12"];
     _coinNum.text = @"+0.99887772";
@@ -75,17 +63,13 @@
     
     coinType = [NSString stringWithFormat:@"  (%@)",coinType];
     NSMutableAttributedString *strAtt = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@\n%@",type,coinType,time]];
-    
     NSRange rangle1 = NSMakeRange(0, type.length);
     NSRange rangle2 = NSMakeRange(type.length, coinType.length);
     NSRange rangle3 = NSMakeRange(strAtt.length-time.length, time.length);
-    
     [strAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17*scale_h] range:rangle1];
     [strAtt addAttribute:NSForegroundColorAttributeName value:kBlackColor  range:rangle1];
-    
     [strAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14*scale_h] range:rangle2];
     [strAtt addAttribute:NSForegroundColorAttributeName value:kGrayColor  range:rangle2];
-    
     [strAtt addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14*scale_h] range:rangle3];
     [strAtt addAttribute:NSForegroundColorAttributeName value:kGrayColor  range:rangle3];
     

@@ -37,6 +37,7 @@
     _emailAdd.placeholder = GetString(@"account18");//
     _emailAdd.font = [UIFont systemFontOfSize:15*scale_h];
     [_emailAdd setValue:kGrayColor forKeyPath:@"_placeholderLabel.textColor"];
+    _emailAdd.keyboardType = UIKeyboardTypeASCIICapable;
     [self.view addSubview:_emailAdd];
     
     

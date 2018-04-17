@@ -97,9 +97,12 @@
     NSString *callPhone = [NSString stringWithFormat:@"telprompt://%@", phoneNum];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0) {
         
+        
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:callPhone]]) {
             /// 大于等于10.0系统使用此openURL方法
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:callPhone] options:@{} completionHandler:nil];
+            if (@available(iOS 10.0, *)) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:callPhone] options:@{} completionHandler:nil];
+            }
         }
     }else{
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:callPhone]]) {

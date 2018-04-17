@@ -51,11 +51,6 @@
 
 #pragma mark - 发送短信验证码
 - (void)clickSendSMS{
-    [self.view endEditing:YES];
-    [_sendBtn startCountDownTime:60 textNormalColor:kGrayColor textColor:kNavColor withCountDownBlock:^{
-        //此处发送验证码等操作
-        //................
-    }];
     [self startLoading];
     //   type有：1注册短信验证码  2 修改密码短信验证码  3 登录验证码  4交易密码验证码
     NSString* phone = [NSString stringWithFormat:@"%@%@",_areaStr,_phoneStr];
@@ -65,13 +60,21 @@
     DebugLog(@"%@\n%@",paramter,Api_mobilecode);
     [MHHttpTool POST:Api_mobilecode parameters:paramter success:^(NSDictionary * _Nullable responseDic) {
         DebugLog(@"%@",responseDic);
-        [self stopLoading:0];
+
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseDic];
-//        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
+        [self stopLoading:0];
+        if ([code isEqualToString:@"0"]) {
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
-        });
-        
+            [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
+                NSLog(@"开始倒计时");
+                //此处发送验证码等操作
+                //................
+            }];
+            
+        }else{
+            [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
+        }
     } failure:^(NSError * _Nonnull error) {
         [self stopLoading:0];
         [HUDTools showText:@"网络出错" withView:self.view withDelay:1.5];

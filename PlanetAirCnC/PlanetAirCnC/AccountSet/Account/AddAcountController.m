@@ -7,7 +7,7 @@
 //
 
 #import "AddAcountController.h"
-#import "TDButton.h"
+//#import "TDButton.h"
 //#import "CoinTypeController.h"
 #import "SelectCoinTypeController.h"
 
@@ -27,7 +27,6 @@
 @property (nonatomic, strong) UIButton *addBtn;
 
 @property (nonatomic, strong) UsedAccountModel *model;
-
 @property (nonatomic, copy) NSString *currency_id;
 
 @end
@@ -78,16 +77,16 @@
     
     if (![_accountType isEqualToString:@"2"]) {
         if ([_currency_id isEqualToString:@"0"]) {
-            [HUDTools showText:GetString(@"account31") withView:self.view withDelay:2];//请输入手机号
+            [HUDTools showText:GetString(@"account31") withView:self.view withDelay:2];//
             return;
         }
     }
     if (_assetName.text.length == 0) {
-        [HUDTools showText:GetString(@"login02") withView:self.view withDelay:2];//请输入手机号
+        [HUDTools showText:GetString(@"account32") withView:self.view withDelay:2];//
         return;
     }
     if (_assetAdd.text.length == 0) {
-        [HUDTools showText:GetString(@"login03") withView:self.view withDelay:2]; //请新人密码
+        [HUDTools showText:GetString(@"account33") withView:self.view withDelay:2]; //
         return;
     }
     
@@ -204,6 +203,7 @@
         _assetAdd.placeholder = GetString(@"account33");
         _assetAdd.font = [UIFont systemFontOfSize:15*scale_h];
         [_assetAdd setValue:kGrayColor forKeyPath:@"_placeholderLabel.textColor"];
+        _assetAdd.keyboardType = UIKeyboardTypeASCIICapable;
     }
     return _assetAdd;
 }

@@ -79,8 +79,8 @@
 "account08" = "地址簿";
 "account09" = "登录密码";
 "account10" = "交易密码";
-"account11" = "邮箱密码";
-"account12" = "你是纷享家的第";
+"account11" = "邮箱地址";
+"account12" = "你是纷享城的第";
 "account13" = "位居民";
 
 "account14" = "邮箱地址";
@@ -190,6 +190,7 @@
 //数字资产
 "digital01" = "数字资产";
 "digital02" = "添加币种";
+"digital022" = " 添加币种";
 "digital03" = "复制地址";
 "digital04" = "转出";
 "digital05" = "收款";

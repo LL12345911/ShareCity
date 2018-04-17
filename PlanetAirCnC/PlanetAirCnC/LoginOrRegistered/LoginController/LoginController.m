@@ -284,7 +284,7 @@
         _pwdText.borderStyle = UITextBorderStyleNone;
         _pwdText.placeholder = GetString(@"login03");// @"请输入密码";
          _pwdText.secureTextEntry = YES;
-        //    _pwdText.keyboardType = UIKeyboardTypeNumberPad;
+            _pwdText.keyboardType = UIKeyboardTypeASCIICapable;
         //[_pwdText setValue:kGrayColor forKeyPath:@"_placeholderLabel.textColor"];
     }
     return _pwdText;

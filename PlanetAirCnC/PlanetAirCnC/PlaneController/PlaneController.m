@@ -125,20 +125,20 @@
     
 
     
-    NSDecimalNumberHandler *hander = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:15 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
-    
-    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:@"3.1415926000000000000"];
-    NSDecimalNumber *number2= [NSDecimalNumber decimalNumberWithString:@"3.00000000011001111111"];
-
-    number = [number decimalNumberByAdding:number2 withBehavior:hander];
-    
-    NSDecimalNumber *resultDN = [number decimalNumberByRoundingAccordingToBehavior:hander];
-    NSLog(@"%@",number);
-    
-    
-    NSString *str = [Addition additionOfString:@"999999.000000000000000000001" AndString:@"2.000000000000000000001"];
-//    NSString *str = [Addition addTwoNumberWithOneNumStr:@"0.000000000000000000001" anotherNumStr:@"0.000000000000000000001"];
-    NSLog(@"%@",str);
+//    NSDecimalNumberHandler *hander = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:15 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+//    
+//    NSDecimalNumber *number = [NSDecimalNumber decimalNumberWithString:@"3.1415926000000000000"];
+//    NSDecimalNumber *number2= [NSDecimalNumber decimalNumberWithString:@"3.00000000011001111111"];
+//
+//    number = [number decimalNumberByAdding:number2 withBehavior:hander];
+//    
+//    NSDecimalNumber *resultDN = [number decimalNumberByRoundingAccordingToBehavior:hander];
+//    NSLog(@"%@",number);
+//    
+//    
+//    NSString *str = [Addition additionOfString:@"999999.000000000000000000001" AndString:@"2.000000000000000000001"];
+////    NSString *str = [Addition addTwoNumberWithOneNumStr:@"0.000000000000000000001" anotherNumStr:@"0.000000000000000000001"];
+//    NSLog(@"%@",str);
 }
 
 
@@ -552,10 +552,8 @@
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:subTitle preferredStyle:UIAlertControllerStyleAlert];
     // UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"忽略此版本" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *sure = [UIAlertAction actionWithTitle:@"立即升级" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-        float version =  [[[UIDevice currentDevice] systemVersion] floatValue];
-        
-        if (version >= 10 ) {
+//        float version =  [[[UIDevice currentDevice] systemVersion] floatValue];
+        if (@available(iOS 10.0, *)) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:openUrl] options:@{} completionHandler:^(BOOL success) {
             }];
         }else{

@@ -10,6 +10,20 @@
 
 @implementation UIColor (Hex)
 
+
++ (UIColor *)color:(UIColor *)color updateAlpha:(CGFloat)alpha {
+    CGFloat colors[4];
+    [color getRed:&(colors[0]) green:&(colors[1]) blue:&(colors[2]) alpha:&(colors[3])];
+    return [UIColor colorWithRed:colors[0] green:colors[1] blue:colors[2] alpha:alpha];
+}
+
+- (CGFloat)alpha {
+    CGFloat colors[4];
+    [self getRed:&(colors[0]) green:&(colors[1]) blue:&(colors[2]) alpha:&(colors[3])];
+    return colors[3];
+}
+
+
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格

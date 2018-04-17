@@ -15,10 +15,7 @@
 @property (nonatomic, strong) UIImageView *activeImage;
 @property (nonatomic, strong) UIButton *activeBtn;
 @property (nonatomic, strong) CustomLoader *loader;
-
-@property (nonatomic, strong) UIWindow *window;
-
-
+//@property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIView *indicatorBack;
 @property (nonatomic, strong) UIActivityIndicatorView *indicator;
 
@@ -42,8 +39,6 @@
     [self setBlankView];
     
 //    [self setStatusBarBackgroundColor:kNavColor];
-    
-    
 //    [self setStatusBarBackgroundImage:[UIImage imageNamed:@"navImage"]];
     
     //设置状态栏 字体颜色为 白色
@@ -53,16 +48,19 @@
 
 - (void)startLoading{
     
-//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
 //    window.windowLevel = UIWindowLevelAlert;
     
-    _window  = [UIApplication sharedApplication].keyWindow;
-//    _window.windowLevel = UIWindowLevelAlert;
+    if (_indicatorBack) {
+        [_indicatorBack removeAllSubviews];
+        _indicatorBack.frame = CGRectMake(0, kHeight, kWidth, kHeight);
+    }
+    
     
    _indicatorBack = [[UIView alloc] init];
     _indicatorBack.frame = CGRectMake(0, 0, kWidth, kHeight);
     _indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
-    [_window addSubview:_indicatorBack];
+    [window addSubview:_indicatorBack];
     
     _indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     //设置显示位置
@@ -74,16 +72,13 @@
 }
 
 - (void)stopLoading{
-//    [_indicator stopAnimating];
-//    _window.windowLevel = UIWindowLevelNormal;
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_indicatorBack removeAllSubviews];
         _indicatorBack.frame = CGRectMake(0, kHeight, kWidth, kHeight);
         [_indicator removeAllSubviews];
         
     });
-    
-    
 }
 
 

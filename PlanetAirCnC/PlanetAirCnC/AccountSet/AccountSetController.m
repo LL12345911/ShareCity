@@ -41,6 +41,8 @@
 @property (nonatomic, strong) NSArray *imageArr;
 
 @property (nonatomic, strong) AccountModel *model;
+@property (nonatomic, strong) UIAlertController* alertVc;
+@property (nonatomic, strong) UIAlertController* alertLoginOut;
 
 @end
 
@@ -122,9 +124,28 @@
 
 #pragma mark - 退出登录
 - (void)loginOutMetgod{
-    [Helper setValue:@"" forkey:USER_Token];
-    LoginController *login = [[LoginController alloc] init];
-    [self.navigationController pushViewController:login animated:YES];
+    if (!_alertLoginOut) {
+        _alertLoginOut = [UIAlertController alertControllerWithTitle:@"退出登录" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+        
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"退出登录" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [Helper setValue:@"" forkey:USER_Token];
+                LoginController *login = [[LoginController alloc] init];
+                [self.navigationController pushViewController:login animated:YES];
+            });
+        }];
+        
+//TODO  修改字体颜色,属于私有Api 慎用
+        [cancelAction setValue:[UIColor redColor] forKey:@"_titleTextColor"];
+        [_alertLoginOut addAction:cancelAction];
+        [_alertLoginOut addAction:sureAction];
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:_alertLoginOut animated:YES completion:^{}];
+    });
+    
 }
 
 #pragma mark - 地址簿
@@ -155,6 +176,26 @@
         password.emailStr = _model.user_email;
     }
     [self.navigationController pushViewController:password animated:YES];
+}
+#pragma mark - 拨打客服电话
+- (void)callMobilePhone{
+    if (!_alertVc) {
+        _alertVc = [UIAlertController alertControllerWithTitle:@"客服电话" message:@"服务时间：00:00-24:00" preferredStyle:UIAlertControllerStyleActionSheet];//UIAlertControllerStyleActionSheet
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+        
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"400-088-1188" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [NSString callPhoneStr:@"4009197000"];
+        }];
+        
+//TODO warning  修改字体颜色,属于私有Api 慎用
+        [cancelAction setValue:[UIColor redColor] forKey:@"_titleTextColor"];
+        [_alertVc addAction:cancelAction];
+        [_alertVc addAction:sureAction];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [self presentViewController:_alertVc animated:YES completion:^{}];
+    });
 }
 
 
@@ -194,6 +235,8 @@
             nickView.nickNameStr = _model.nickname;
         }
         [self.navigationController pushViewController:nickView animated:YES];
+    }else if (indexPath.row == 3){
+        [self callMobilePhone];
     }
 }
 

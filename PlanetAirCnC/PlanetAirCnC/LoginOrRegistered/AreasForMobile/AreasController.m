@@ -39,26 +39,10 @@
     
     _allDataArr = [NSMutableArray arrayWithCapacity:10];
     _dataArr = [NSMutableArray arrayWithCapacity:10];
-    
     [self.view addSubview:self.tableview];
     [_tableview registerClass:[AreasMobileCell class] forCellReuseIdentifier:NSStringFromClass([AreasMobileCell class])];
     
-    _searchBar = [[MarsSearchBar alloc] initWithFrame:CGRectMake(20, 0, kWidth-40, 60*scale_h)];
-    _searchBar.backgroundColor = [UIColor clearColor];
-    _searchBar.searchBarTextField.font = [UIFont systemFontOfSize:15*scale_h];
-    _searchBar.placeholder = GetString(@"login33");
-    _searchBar.delegate = self;
-    //光标颜色
-    _searchBar.cursorColor = kBlueColor;
-    //TextField
-    _searchBar.searchBarTextField.layer.cornerRadius = 4;
-    _searchBar.searchBarTextField.layer.masksToBounds = YES;
-    _searchBar.searchBarTextField.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
-    _searchBar.searchBarTextField.layer.borderWidth = 1.0;
-    //去掉取消按钮灰色背景
-    _searchBar.hideSearchBarBackgroundImage = YES;
-    _searchBar.rect = CGRectMake(20, 10*scale_h, kWidth-40, 40*scale_h);
-    self.tableview.tableHeaderView = _searchBar;
+    self.tableview.tableHeaderView = self.searchBar;
     
     [self getDataFromNetwork];
 }
@@ -114,7 +98,6 @@
         [rankCell setValueByAreaMobileModel:model];
     }
     return rankCell;
-    
 }
 
 
@@ -127,7 +110,6 @@
             [self.delegate returnAreasForMobileInfoDic:_dataArr[indexPath.row]];
             [self.navigationController popViewControllerAnimated:YES];
         }
-        
     }
 }
 
@@ -150,7 +132,26 @@
     return _tableview;
 }
 
-
+- (MarsSearchBar *)searchBar{
+    if (!_searchBar) {
+        _searchBar = [[MarsSearchBar alloc] initWithFrame:CGRectMake(20, 0, kWidth-40, 60*scale_h)];
+        _searchBar.backgroundColor = [UIColor clearColor];
+        _searchBar.searchBarTextField.font = [UIFont systemFontOfSize:15*scale_h];
+        _searchBar.placeholder = GetString(@"login33");
+        _searchBar.delegate = self;
+        //光标颜色
+        _searchBar.cursorColor = kBlueColor;
+        //TextField
+        _searchBar.searchBarTextField.layer.cornerRadius = 4;
+        _searchBar.searchBarTextField.layer.masksToBounds = YES;
+        _searchBar.searchBarTextField.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+        _searchBar.searchBarTextField.layer.borderWidth = 1.0;
+        //去掉取消按钮灰色背景
+        _searchBar.hideSearchBarBackgroundImage = YES;
+        _searchBar.rect = CGRectMake(20, 10*scale_h, kWidth-40, 40*scale_h);
+    }
+    return _searchBar;
+}
 
 #pragma mark -  UISearchBar Delegate
 //已经开始编辑时的回调

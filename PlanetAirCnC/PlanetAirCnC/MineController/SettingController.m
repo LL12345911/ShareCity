@@ -69,7 +69,7 @@
             
         }];
         
-#warning  修改字体颜色,属于私有Api 慎用
+//TODO  修改字体颜色,属于私有Api 慎用
         [cancelAction setValue:[UIColor redColor] forKey:@"_titleTextColor"];
         [_alertLoginOut addAction:cancelAction];
         [_alertLoginOut addAction:sureAction];
@@ -122,7 +122,7 @@
                  [NSString callPhoneStr:@"4009197000"];
             }];
             
-#warning  修改字体颜色,属于私有Api 慎用
+//TODO  修改字体颜色,属于私有Api 慎用
             [cancelAction setValue:[UIColor redColor] forKey:@"_titleTextColor"];
             [_alertVc addAction:cancelAction];
             [_alertVc addAction:sureAction];

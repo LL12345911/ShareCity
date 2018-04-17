@@ -43,7 +43,7 @@
 
 - (void)layoutReloadViewFrame{
     
-    _back = [[UIView alloc] initWithFrame:CGRectMake(20, 20*scale_h, kWidth-40, 80*scale_h)];
+    _back = [[UIView alloc] initWithFrame:CGRectMake(20, 15*scale_h, kWidth-40, 80*scale_h)];
     _back.backgroundColor = [UIColor whiteColor];
     _back.layer.shadowColor = [UIColor blackColor].CGColor;
     _back.layer.shadowOpacity = 0.8f;

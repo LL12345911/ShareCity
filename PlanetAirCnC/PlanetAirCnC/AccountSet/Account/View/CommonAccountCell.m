@@ -38,7 +38,7 @@
 }
 
 - (void)setValueByUsedAccountModel:(UsedAccountModel *)model{
-    _account.text = model.currency_name_cn;
+    _account.text = model.walletname;
     _address.text = model.walletpath;
 
 }

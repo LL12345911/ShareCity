@@ -1,6 +1,6 @@
 //
 //  Api.h
-//  AirCnCWallet
+//  PlanteAirCnc
 //
 //  Created by Mars on 2018/1/24.
 //  Copyright © 2018年 AirCnC车去车来. All rights reserved.
@@ -41,14 +41,11 @@
 #define Api_h
 
 //  测试服务器
-#define AppApi @"http://192.168.0.169:8008" //测试地址
-//#define AppImage @"http://192.168.0.211:8087"  //前缀测试
-//#define AppImage2 @"http://192.168.0.211:8083"  //前缀测试
-
+#define AppApi @"http://192.168.0.178:8088" //测试地址
 //  生产服务器
 //#define AppApi @"https://webapp-api.aircnc.com.cn" //生产服务器
-//#define AppImage @"https://img2.aircnc.com.cn"  //前缀测试  系统
-//#define AppImage2 @"https://img1.aircnc.com.cn"  //前缀测试 是用户
+
+
 
 #define Api @"newapi/" //接口
 //注册

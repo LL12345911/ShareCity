@@ -121,11 +121,7 @@
         [HUDTools showText:GetString(@"login17") withView:self.view withDelay:2];//请输入手机号
         return;
     }
-    
-    [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
-        //此处发送验证码等操作
-        //................
-    }];
+
     [self startLoading];
     //   type有：1注册短信验证码  2 修改密码短信验证码  3 登录验证码  4交易密码验证码
     NSString* phone = [NSString stringWithFormat:@"%@%@",_mobileArea,_phoneText.text];
@@ -136,13 +132,19 @@
     DebugLog(@"%@\n%@",paramter,Api_mobilecode);
     [MHHttpTool POST:Api_mobilecode parameters:paramter success:^(NSDictionary * _Nullable responseDic) {
         DebugLog(@"%@",responseDic);
-        [self stopLoading:0];
         NSDictionary *dic = [NSDictionary dictionaryWithDictionary:responseDic];
-//        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
+        NSString *code = [NSString stringWithFormat:@"%@",dic[@"code"]];
+        [self stopLoading:0];
+        if ([code isEqualToString:@"0"]) {
             [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
-        });
+            [_sendBtn startCountDownTime:60 textNormalColor:[UIColor whiteColor] textColor:[UIColor whiteColor] withCountDownBlock:^{
+                NSLog(@"开始倒计时");
+                //此处发送验证码等操作
+                //................
+            }];
+        }else{
+            [HUDTools showText:dic[@"msg"] withView:self.view withDelay:2.0];
+        }
         
        
     } failure:^(NSError * _Nonnull error) {
@@ -233,6 +235,7 @@
         _pwdText.placeholder = GetString(@"login19");// @"请输入密码";
         _pwdText.font = [UIFont systemFontOfSize:15*scale_h];
          _pwdText.secureTextEntry = YES;
+        _pwdText.keyboardType = UIKeyboardTypeASCIICapable;
     }
     return _pwdText;
 }
@@ -253,7 +256,7 @@
         _pwd2Text.placeholder = GetString(@"login20");// @"请输入密码";
         _pwd2Text.font = [UIFont systemFontOfSize:15*scale_h];
          _pwd2Text.secureTextEntry = YES;
-        
+        _pwd2Text.keyboardType = UIKeyboardTypeASCIICapable;
     }
     return _pwd2Text;
 }

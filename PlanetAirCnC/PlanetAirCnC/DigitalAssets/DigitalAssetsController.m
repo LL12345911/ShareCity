@@ -6,6 +6,9 @@
 //  Copyright © 2018年 AirCnC车去车来. All rights reserved.
 //
 
+//数字资产
+
+
 #import "DigitalAssetsController.h"
 #import "DigitalAssetsCell.h"
 #import "RecordController.h"
@@ -28,7 +31,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.customNavBar.title = GetString(@"digital01");// @"数字资产";
     
-    [self.customNavBar wr_setRightButtonWithNormal:[UIImage imageNamed:@"添加"] highlighted:nil title:GetString(@"digital02") titleColor:[UIColor whiteColor]];
+    [self.customNavBar wr_setRightButtonWithNormal:[UIImage imageNamed:@"添加"] highlighted:nil title:GetString(@"digital022") titleColor:[UIColor whiteColor]];
     
     __block typeof(self) weakSelf = self;
     self.customNavBar.onClickRightButton = ^{
